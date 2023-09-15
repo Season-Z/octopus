@@ -1,0 +1,26 @@
+[
+  {
+    "name": "@sm/react",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/react/18.2.0/umd/react.production.min.js"
+  },
+  {
+    "name": "@sm/react-dom",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/react-dom/18.2.0/umd/react-dom.production.min.js"
+  },
+  {
+    "name": "dayjs",
+    "url": "https://cdn.bootcdn.net/ajax/libs/dayjs/1.11.7/dayjs.min.js"
+  },
+  {
+    "name": "antd",
+    "url": "https://static.cdn.sunmi.com/unpkg/antd/4.21.0/dist/antd.min.js"
+  },
+  {
+    "name": "@ant-design/plots",
+    "url": "https://static.cdn.sunmi.com/unpkg/@ant-design/plots/1.2.1/dist/plots.min.js"
+  },
+  {
+    "name": "@sm/max-components-pro",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/max-components-pro/1.0.22/web/bundle.js"
+  }
+]

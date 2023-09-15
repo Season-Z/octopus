@@ -1,0 +1,52 @@
+{
+  "name": "@octopus/render",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "version": "0.0.28",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "plugin-builder",
+    "build": "plugin-builder --build",
+    "build:analyze": "plugin-builder --build --analyze",
+    "build:w": "plugin-builder --build --watch",
+    "lint": "eslint --ext .tsx,.ts src/",
+    "prettier": "prettier --write ./src",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0"
+  },
+  "dependencies": {
+    "@octopus/demo-page": "^0.0.28",
+    "@octopus/material": "^0.0.28",
+    "@octopus/model": "^0.0.28",
+    "html-tag-names": "^2.0.1",
+    "loadjs": "4.3.0-rc1",
+    "lodash-es": "^4.17.21",
+    "zustand": "^4.3.8"
+  },
+  "devDependencies": {
+    "@octopus/plugin-builder": "^0.0.28",
+    "@types/loadjs": "^4.0.1",
+    "@types/lodash-es": "^4.17.6",
+    "@types/node": "^18.15.9",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "antd": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
+    "sass": "^1.54.0",
+    "vite-plugin-dts": "^2.1.0"
+  },
+  "config": {}
+}

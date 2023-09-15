@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "mitt": [
+        "./node_modules/mitt"
+      ]
+    },
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

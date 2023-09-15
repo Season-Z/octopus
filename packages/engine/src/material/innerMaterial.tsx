@@ -1,0 +1,431 @@
+import { CMaterialPropsType, CMaterialType, HTMl_TAGS } from '@octopus/model';
+import { capitalize } from 'lodash-es';
+
+const customAttributesMeta: CMaterialPropsType[number] = {
+  name: '$$attributes',
+  title: '属性',
+  valueType: 'object',
+  setters: [
+    {
+      componentName: 'ArraySetter',
+      props: {
+        item: {
+          setters: [
+            {
+              componentName: 'ShapeSetter',
+              props: {
+                elements: [
+                  {
+                    name: 'key',
+                    title: '属性名',
+                    valueType: 'string',
+                    setters: ['StringSetter'],
+                  },
+                  {
+                    name: 'value',
+                    title: '值',
+                    valueType: 'string',
+                    setters: ['StringSetter', 'NumberSetter', 'JSONSetter', 'FunctionSetter', 'ExpressionSetter'],
+                  },
+                ],
+                collapse: false,
+              },
+              initialValue: {},
+            },
+          ],
+          initialValue: {},
+        },
+      },
+      initialValue: [],
+    },
+  ],
+};
+
+const widthPropsMeta: CMaterialPropsType[number] = {
+  name: 'width',
+  title: '宽度',
+  valueType: 'string',
+  setters: ['StringSetter', 'ExpressionSetter'],
+};
+
+const heightPropsMeta: CMaterialPropsType[number] = {
+  name: 'height',
+  title: '高度',
+  valueType: 'string',
+  setters: ['StringSetter', 'ExpressionSetter'],
+};
+
+const htmlNativeComponentMeta = HTMl_TAGS.map((tag) => {
+  const DivMeta: CMaterialType = {
+    title: capitalize(tag),
+    componentName: tag,
+    props: [customAttributesMeta],
+    snippets: [],
+  };
+
+  return DivMeta;
+});
+
+const BaseComponentMeta: CMaterialType[] = [
+  {
+    title: '块',
+    componentName: 'CBlock',
+    props: [
+      widthPropsMeta,
+      heightPropsMeta,
+      {
+        name: 'children',
+        title: '文本',
+        valueType: 'string',
+        setters: ['StringSetter', 'ExpressionSetter'],
+      },
+      customAttributesMeta,
+    ],
+    groupName: '原子组件',
+    snippets: [
+      {
+        title: '块',
+        snapshotText: 'Block',
+        category: '基础组件',
+        schema: {
+          props: {},
+          style: {
+            background: 'white',
+            width: '100%',
+            height: '100px',
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: '容器',
+    componentName: 'CContainer',
+    isContainer: true,
+    props: [
+      widthPropsMeta,
+      heightPropsMeta,
+      {
+        name: 'afterMount',
+        title: '渲染之后',
+        valueType: 'function',
+        setters: ['FunctionSetter', 'ExpressionSetter', 'TestSetter' as any],
+      },
+      {
+        name: 'beforeDestroy',
+        title: '销毁之前',
+        valueType: 'function',
+        setters: ['FunctionSetter', 'ExpressionSetter'],
+      },
+      customAttributesMeta,
+    ],
+    groupName: '原子组件',
+    snippets: [
+      {
+        title: '容器',
+        snapshotText: 'Con',
+        category: '基础组件',
+        schema: {
+          props: {
+            width: '100%',
+            height: '100px',
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: '图片',
+    componentName: 'CImage',
+    props: [
+      {
+        name: 'src',
+        title: '地址',
+        valueType: 'string',
+        setters: ['StringSetter', 'ExpressionSetter'],
+      },
+      widthPropsMeta,
+      heightPropsMeta,
+      customAttributesMeta,
+    ],
+    groupName: '原子组件',
+    snippets: [
+      {
+        title: '图片',
+        snapshotText: 'Img',
+        category: '基础组件',
+        schema: {
+          props: {
+            width: '300px',
+            height: '150px',
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: '视频',
+    componentName: 'CVideo',
+    props: [
+      {
+        name: 'src',
+        title: '地址',
+        valueType: 'string',
+        setters: ['StringSetter', 'ExpressionSetter'],
+      },
+      {
+        name: 'autoPlay',
+        title: '自动播放',
+        valueType: 'string',
+        setters: ['BooleanSetter', 'ExpressionSetter'],
+      },
+      {
+        name: 'controls',
+        title: '控制面板',
+        valueType: 'string',
+        setters: ['BooleanSetter', 'ExpressionSetter'],
+      },
+      widthPropsMeta,
+      heightPropsMeta,
+      customAttributesMeta,
+    ],
+    fixedProps: {
+      autoPlay: false,
+    },
+    advanceCustom: {
+      wrapComponent: (Comp) => {
+        return (props) => {
+          //  原生的控制面板会阻断页面级别的事件监听，导致拖拽失效，这里在编辑态禁用 video 的控制面板相关事件触发
+          return (
+            <Comp
+              {...props}
+              style={{
+                pointerEvents: 'none',
+                ...props.style,
+              }}
+            ></Comp>
+          );
+        };
+      },
+    },
+    groupName: '原子组件',
+    snippets: [
+      {
+        title: '视频',
+        snapshotText: 'Video',
+        category: '基础组件',
+        schema: {
+          props: {
+            width: '300px',
+            height: '150px',
+            src: 'https://vjs.zencdn.net/v/oceans.mp4',
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: '音频',
+    groupName: '原子组件',
+    componentName: 'CAudio',
+    props: [
+      {
+        name: 'src',
+        title: '地址',
+        valueType: 'string',
+        setters: ['StringSetter', 'ExpressionSetter'],
+      },
+      {
+        name: 'autoPlay',
+        title: '自动播放',
+        valueType: 'string',
+        setters: ['BooleanSetter', 'ExpressionSetter'],
+      },
+      {
+        name: 'controls',
+        title: '控制面板',
+        valueType: 'string',
+        setters: ['BooleanSetter', 'ExpressionSetter'],
+      },
+      widthPropsMeta,
+      heightPropsMeta,
+      customAttributesMeta,
+    ],
+    advanceCustom: {
+      wrapComponent: () => {
+        return (props) => {
+          return (
+            <div
+              style={{
+                display: 'inline-block',
+                fontSize: 0,
+              }}
+            >
+              <audio
+                {...props}
+                style={{
+                  pointerEvents: 'none',
+                  ...props.style,
+                }}
+              ></audio>
+            </div>
+          );
+        };
+      },
+    },
+    snippets: [
+      {
+        title: '音频',
+        snapshotText: 'Audio',
+        category: '基础组件',
+        schema: {
+          props: {
+            src: 'https://vjs.zencdn.net/v/oceans.mp4',
+            controls: true,
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: '文本',
+    componentName: 'CText',
+    groupName: '原子组件',
+    props: [
+      {
+        name: 'content',
+        title: '内容',
+        valueType: 'string',
+        setters: ['TextAreaSetter', 'ExpressionSetter'],
+      },
+      customAttributesMeta,
+    ],
+    snippets: [
+      {
+        title: '文本',
+        snapshotText: 'Text',
+        category: '基础组件',
+        schema: {
+          props: {
+            content: 'text',
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: 'Canvas',
+    componentName: 'CCanvas',
+    props: [
+      widthPropsMeta,
+      heightPropsMeta,
+      {
+        name: 'afterMount',
+        title: '渲染之后',
+        valueType: 'function',
+        setters: ['FunctionSetter', 'ExpressionSetter', 'TestSetter' as any],
+      },
+      {
+        name: 'beforeDestroy',
+        title: '销毁之前',
+        valueType: 'function',
+        setters: ['FunctionSetter', 'ExpressionSetter'],
+      },
+      customAttributesMeta,
+    ],
+    groupName: '原子组件',
+    advanceCustom: {
+      onNewAdd: async (node, params) => {
+        const props = node.getPlainProps();
+        const id = Math.random().toString(32).slice(3, 9);
+        props.$$attributes = [
+          {
+            key: 'id',
+            value: id,
+          },
+          {
+            key: 'style',
+            value: {
+              display: 'block',
+              margin: '0 auto',
+            },
+          },
+        ];
+        props.afterMount.value = props.afterMount.value.replace('$[id]', id);
+        node.updateWithPlainObj({
+          props,
+        });
+        return {
+          addNode: node,
+        };
+      },
+    },
+    snippets: [
+      {
+        title: '画布',
+        snapshotText: 'Cavs',
+        category: '基础组件',
+        schema: {
+          props: {
+            width: '600px',
+            height: '150px',
+            style: {
+              margin: '0 auto',
+            },
+            afterMount: {
+              type: 'FUNCTION',
+              value: `
+              function run () {
+                var ctx = document.getElementById("$[id]").getContext("2d");
+                ctx.font = "48px serif";
+                ctx.fillText("Hello Canvas", 10, 50);
+              }
+              `,
+            },
+          },
+        },
+      },
+    ],
+  },
+  {
+    title: 'HTML 标签',
+    componentName: 'CNativeTag',
+    props: [
+      {
+        name: 'htmlTag',
+        title: '标签名',
+        valueType: 'string',
+        setters: [
+          {
+            componentName: 'SelectSetter',
+            props: {
+              options: HTMl_TAGS.map((tag) => {
+                return {
+                  name: tag,
+                  value: tag,
+                };
+              }),
+            },
+          },
+        ],
+      },
+      customAttributesMeta,
+    ],
+    isContainer: true,
+    groupName: '原子组件',
+    snippets: [
+      {
+        title: 'HTML',
+        snapshotText: 'HTML',
+        category: '基础组件',
+        schema: {
+          props: {
+            htmlTag: 'div',
+          },
+        },
+      },
+    ],
+  },
+];
+
+export const InnerComponentMeta = [...BaseComponentMeta, ...htmlNativeComponentMeta];

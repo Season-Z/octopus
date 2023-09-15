@@ -1,0 +1,25 @@
+# dependency
+node_modules
+/npm-debug.log*
+/yarn-error.log
+package-lock.json
+yarn.lock
+
+# production
+/build
+/dist
+/build-data/**/*.json
+/builder
+/builder.zip
+
+# dev
+builder.local.js
+.max
+
+# misc
+.DS_Store
+
+# editor
+.vscode/
+.idea/
+tmp

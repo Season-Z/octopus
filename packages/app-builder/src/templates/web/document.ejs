@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="https://static.cdn.sunmi.com/unpkg/@sm/max-css-reset/1.0.1/reset.css">
+  </link>
+</head>
+
+<body>
+  <div id="root" style="height: 100vh; width: 100%; overflow: hidden; display: flex; justify-content: start; flex-direction: column; align-items: flex-start;"></div>
+  <!-- 工程配置-->
+  <script>
+    window.MAX_APP_CONFIG= '{{max_app_config}}' || {};
+    window.loadScript = function(url) {
+      var script = document.createElement('script');
+      script.src = url;
+      script.async = false;
+      document.body.appendChild(script);
+    }
+  </script>
+  <!-- 资源依赖 -->
+  <%= dependencies %>
+  <script>
+    if(typeof window.MAX_APP_CONFIG ==="object" && window.MAX_APP_CONFIG.assets) {
+      for (var i = 0; i < window.MAX_APP_CONFIG.assets.length; i++) {
+        window.loadScript(window.MAX_APP_CONFIG.assets[i]);
+      }
+    }
+  </script>
+</body>
+
+</html>

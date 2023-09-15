@@ -1,0 +1,51 @@
+{
+  "name": "chameleon",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "clear": "rm -rf ./node_modules",
+    "lint": "lerna run lint",
+    "build": "lerna run build",
+    "changeVersion": "lerna version --force-publish --conventional-commits",
+    "changeVersionPatch": "lerna version patch --force-publish --conventional-commits",
+    "changeVersionMinor": "lerna version minor --force-publish --conventional-commits",
+    "changeVersionMajor": "lerna version major --force-publish --conventional-commits",
+    "toPublish": "npm run build && lerna publish from-package --force-publish --conventional-commits",
+    "toFastPublish": "lerna publish from-package --force-publish --conventional-commits",
+    "toPublishBeta": "npm run build && lerna publish --conventional-commits --dist-tag beta",
+    "run-tests": "lerna run test",
+    "cz": "git-cz"
+  },
+  "lint-staged": {
+    "packages/*/src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "packages/*/src/**/*": "prettier --write --ignore-unknown"
+  },
+  "devDependencies": {
+    "@hlerenow/git-cz": "^4.9.3",
+    "@lerna-lite/cli": "^1.17.0",
+    "@lerna-lite/list": "^1.17.0",
+    "@lerna-lite/run": "^1.17.0",
+    "@lerna-lite/watch": "^1.17.0",
+    "@storybook/preset-scss": "^1.0.3",
+    "clsx": "^1.1.1",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "css-loader": "5.2.7",
+    "eslint": "^8.39.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "2.7.1",
+    "sass": "^1.53.0",
+    "sass-loader": "10.1.1",
+    "style-loader": "2.0.0"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  }
+}

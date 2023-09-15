@@ -1,0 +1,34 @@
+[
+  {
+    "name": "@sm/react",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/react/18.2.0/umd/react.production.min.js"
+  },
+  {
+    "name": "@sm/react-dom",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/react-dom/18.2.0/umd/react-dom.production.min.js"
+  },
+  {
+    "name": "@ant-design/plots",
+    "url": "https://static.cdn.sunmi.com/unpkg/@ant-design/plots/1.2.1/dist/plots.min.js"
+  },
+  {
+    "name": "@sm/max-dsl",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/max-dsl/0.1.33/dist/web/index.production.js"
+  },
+  {
+    "name": "@sm/max-loader",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/max-loader/1.0.29/dist/index.production.js"
+  },
+  {
+    "name": "@sm/max-renderers",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/max-renderers/0.1.38/dist/composite-component-renderer-web.js"
+  },
+  {
+    "name": "@sm/max-components-loader",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/max-components-loader/1.0.50/mod.umd.js"
+  },
+  {
+    "name": "@sm/max-components-pro",
+    "url": "https://static.cdn.sunmi.com/unpkg/@sm/max-components-pro/1.0.22/h5/bundle.js"
+  }
+]
