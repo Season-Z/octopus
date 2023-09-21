@@ -4,9 +4,10 @@ import styles from './Engine.module.scss';
 import i18n from './i18n/index';
 import { CPlugin, PluginManager } from './core/pluginManager';
 import mitt, { Emitter } from 'mitt';
-import { AssetPackage, CMaterialType, CNode, CPage, CPageDataType, CRootNode, EmptyPage } from '@octopus/model';
+import { AssetPackage, CNode, CPage, CPageDataType, CRootNode, EmptyPage } from '@octopus/model';
 import { getDefaultRender, beforeInitRender } from './utils/defaultEngineConfig';
 import { DesignerPluginInstance } from './plugins/Designer/type';
+import { MaterialType } from '@octopus/material';
 import clsx from 'clsx';
 
 export type EnginContext = {
@@ -17,7 +18,7 @@ export type EnginContext = {
 export type EngineProps = {
   plugins: CPlugin[];
   schema: CPageDataType;
-  material?: CMaterialType[];
+  material?: MaterialType[];
   components?: Record<string, any>;
   assetPackagesList?: AssetPackage[];
   beforePluginRun?: (options: { pluginManager: PluginManager }) => void;
@@ -38,7 +39,7 @@ export class Engine extends React.Component<EngineProps> {
   workbenchRef = React.createRef<Workbench>();
   pageSchema: CPageDataType | undefined;
   pageModel: CPage;
-  material: CMaterialType[] | undefined;
+  material: MaterialType[] | undefined;
   emitter: Emitter<any>;
 
   constructor(props: EngineProps) {
@@ -135,7 +136,7 @@ export class Engine extends React.Component<EngineProps> {
     console.log('updateDesignerAssets', assets);
   };
 
-  updateMaterial = (material: CMaterialType[]) => {
+  updateMaterial = (material: MaterialType[]) => {
     this.emitter.emit('updateMaterial');
     console.log(material);
   };

@@ -1,6 +1,6 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 
-export const LayoutMeta: CMaterialType = {
+export const LayoutMeta: MaterialType = {
   title: 'CLayout',
   componentName: 'CLayout',
   npm: {

@@ -12,7 +12,7 @@ import { CSlot } from './RootNode/Node/slot';
 import { clearSchema, getNode, getRandomStr } from '../util';
 import { InnerComponentNameEnum } from '../types/rootNode';
 import { AssetPackage } from '../types/base';
-import { CMaterialType } from '../types/material';
+import { MaterialType } from '@octopus/material';
 
 export const checkPage = (data: any): CPageDataType => {
   checkComplexData({
@@ -58,9 +58,9 @@ export class CPage {
   constructor(
     data: CPageDataType,
     options?: {
-      materials?: CMaterialType[];
+      materials?: MaterialType[];
       assetPackagesList?: AssetPackage[];
-    }
+    },
   ) {
     checkPage(data);
     this.rawData = JSON.parse(JSON.stringify(data));
@@ -303,7 +303,7 @@ export class CPage {
         ...cloneDeep(it.value.npm || {}),
       } as ComponentMetaType;
     });
-    console.log('export',assetPackagesList, componentsMetaList);
+    console.log('export', assetPackagesList, componentsMetaList);
     // 剔除不合法的meta
     const finalComponentsMetaList = componentsMetaList.filter((el) => {
       if (el.componentName && el.package && el.version) {
@@ -343,6 +343,7 @@ export class CPage {
 export const EmptyPage: CPageDataType = {
   version: '1.0.0',
   name: 'EmptyPage',
+  code: 'masss',
   componentsMeta: [],
   componentsTree: {
     componentName: InnerComponentNameEnum.ROOT_CONTAINER,

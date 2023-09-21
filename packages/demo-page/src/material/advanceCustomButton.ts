@@ -1,6 +1,6 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 
-export const AdvanceButtonMeta: CMaterialType = {
+export const AdvanceButtonMeta: MaterialType = {
   title: 'Button',
   componentName: 'Button',
   npm: {

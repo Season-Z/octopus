@@ -1,4 +1,4 @@
-import { CMaterialPropsType, CMaterialType, HTMl_TAGS } from '@octopus/model';
+import { CMaterialPropsType, MaterialType, HTMl_TAGS } from '@octopus/model';
 import { capitalize } from 'lodash-es';
 
 const customAttributesMeta: CMaterialPropsType[number] = {
@@ -56,7 +56,7 @@ const heightPropsMeta: CMaterialPropsType[number] = {
 };
 
 const htmlNativeComponentMeta = HTMl_TAGS.map((tag) => {
-  const DivMeta: CMaterialType = {
+  const DivMeta: MaterialType = {
     title: capitalize(tag),
     componentName: tag,
     props: [customAttributesMeta],
@@ -66,7 +66,7 @@ const htmlNativeComponentMeta = HTMl_TAGS.map((tag) => {
   return DivMeta;
 });
 
-const BaseComponentMeta: CMaterialType[] = [
+const BaseComponentMeta: MaterialType[] = [
   {
     title: '块',
     componentName: 'CBlock',

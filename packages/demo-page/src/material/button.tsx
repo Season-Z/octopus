@@ -1,7 +1,7 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 import React from 'react';
 
-export const ButtonMeta: CMaterialType<
+export const ButtonMeta: MaterialType<
   | 'ColorSetter'
   | 'SliderSetter'
   | 'CSSSizeSetter'

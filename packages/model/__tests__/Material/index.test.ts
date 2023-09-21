@@ -2,12 +2,12 @@ import { CMaterials } from '../../src/Material/index';
 import {
   AdvanceDataType,
   BaseDataType,
-  CMaterialType,
+  MaterialType,
   ShapeDataType,
   SpecialDataType,
 } from '../../src/types/material';
 
-const mockMaterialData: CMaterialType[] = [
+const mockMaterialData: MaterialType[] = [
   {
     title: '测试物料组件',
     componentName: 'Header',

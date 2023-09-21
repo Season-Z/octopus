@@ -1,6 +1,6 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 
-export const ModalMeta: CMaterialType = {
+export const ModalMeta: MaterialType = {
   title: 'Modal',
   componentName: 'Modal',
   npm: {

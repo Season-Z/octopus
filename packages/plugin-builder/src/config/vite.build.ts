@@ -18,7 +18,7 @@ if (CLI_ARGS_OBJ.analyze) {
   plugins.push(
     visualizer({
       open: true,
-    })
+    }),
   );
 }
 // https://vitejs.dev/config/

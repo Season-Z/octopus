@@ -1,6 +1,6 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 
-export const ColMeta: CMaterialType = {
+export const ColMeta: MaterialType = {
   title: 'Col',
   componentName: 'Col',
   npm: {

@@ -1,11 +1,11 @@
 import { CPage } from '../../src/Page/index';
-import { CMaterialType } from '../../src/types/material';
+import { MaterialType } from '../../src/types/material';
 import { CNodeDataType } from '../../src/types/node';
 import { CPageDataType } from '../../src/types/page';
 import { BasePage } from '@octopus/demo-page';
 import { InnerComponentNameEnum } from '../../src/types/schema';
 
-const mockMaterial: CMaterialType[] = [
+const mockMaterial: MaterialType[] = [
   {
     title: '按钮',
     componentName: 'Button',

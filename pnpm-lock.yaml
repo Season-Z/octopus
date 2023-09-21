@@ -145,94 +145,6 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
 
-  packages/build-script:
-    dependencies:
-      '@typescript-eslint/eslint-plugin':
-        specifier: ^5.32.0
-        version: 5.57.1(@typescript-eslint/parser@5.57.1)(eslint@8.39.0)(typescript@4.9.5)
-      '@typescript-eslint/parser':
-        specifier: ^5.32.0
-        version: 5.57.1(eslint@8.39.0)(typescript@4.9.5)
-      '@vitejs/plugin-react':
-        specifier: ^2.0.0
-        version: 2.0.0(vite@4.3.3)
-      concurrently:
-        specifier: ^7.3.0
-        version: 7.3.0
-      eslint:
-        specifier: ^8.21.0
-        version: 8.39.0
-      eslint-plugin-react:
-        specifier: ^7.30.1
-        version: 7.32.2(eslint@8.39.0)
-      fs-extra:
-        specifier: ^10.1.0
-        version: 10.1.0
-      jest:
-        specifier: ^28.1.3
-        version: 28.1.3(@types/node@18.15.9)(ts-node@10.9.1)
-      jest-environment-jsdom:
-        specifier: ^28.1.3
-        version: 28.1.3
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
-      merge:
-        specifier: ^2.1.1
-        version: 2.1.1
-      prettier:
-        specifier: 2.7.1
-        version: 2.7.1
-      rimraf:
-        specifier: ^4.4.1
-        version: 4.4.1
-      rollup-plugin-visualizer:
-        specifier: ^5.8.3
-        version: 5.8.3
-      ts-jest:
-        specifier: ^28.0.7
-        version: 28.0.7(@babel/core@7.22.11)(esbuild@0.14.51)(jest@28.1.3)(typescript@4.9.5)
-      ts-node:
-        specifier: ^10.9.1
-        version: 10.9.1(@types/node@18.15.9)(typescript@4.9.5)
-      vite:
-        specifier: ^4.3.3
-        version: 4.3.3(@types/node@18.15.9)(sass@1.62.0)
-      vite-plugin-dts:
-        specifier: ^2.1.0
-        version: 2.1.0(@types/node@18.15.9)(vite@4.3.3)
-      vite-plugin-eslint:
-        specifier: ^1.7.0
-        version: 1.7.0(eslint@8.39.0)(vite@4.3.3)
-      vite-plugin-sass-dts:
-        specifier: ^1.3.2
-        version: 1.3.2(postcss@8.4.28)(prettier@2.7.1)(sass@1.62.0)(vite@4.3.3)
-      yargs-parser:
-        specifier: ^21.0.1
-        version: 21.0.1
-    devDependencies:
-      '@tsconfig/node16':
-        specifier: ^1.0.3
-        version: 1.0.3
-      '@types/fs-extra':
-        specifier: ^9.0.13
-        version: 9.0.13
-      '@types/jest':
-        specifier: ^28.1.6
-        version: 28.1.6
-      '@types/node':
-        specifier: ^18.15.9
-        version: 18.15.9
-      '@types/yargs-parser':
-        specifier: ^21.0.0
-        version: 21.0.0
-      esbuild:
-        specifier: ^0.14.51
-        version: 0.14.51
-      typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
-
   packages/demo-page:
     devDependencies:
       '@octopus/model':
@@ -240,7 +152,7 @@ importers:
         version: link:../model
       '@octopus/plugin-builder':
         specifier: ^0.0.28
-        version: link:../build-script
+        version: link:../plugin-builder
       '@types/react':
         specifier: ^18.0.15
         version: 18.0.15
@@ -410,7 +322,7 @@ importers:
         version: link:../demo-page
       '@octopus/plugin-builder':
         specifier: ^0.0.28
-        version: link:../build-script
+        version: link:../plugin-builder
       '@storybook/addon-docs':
         specifier: ^7.4.0
         version: 7.4.0(@types/react-dom@18.0.6)(@types/react@18.0.15)(react-dom@18.2.0)(react@18.2.0)
@@ -519,7 +431,7 @@ importers:
         version: link:../demo-page
       '@octopus/plugin-builder':
         specifier: ^0.0.28
-        version: link:../build-script
+        version: link:../plugin-builder
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.6
@@ -550,7 +462,7 @@ importers:
     devDependencies:
       '@octopus/plugin-builder':
         specifier: ^0.0.28
-        version: link:../build-script
+        version: link:../plugin-builder
       '@types/react':
         specifier: ^18.0.15
         version: 18.0.15
@@ -590,13 +502,16 @@ importers:
     devDependencies:
       '@octopus/plugin-builder':
         specifier: ^0.0.28
-        version: link:../build-script
+        version: link:../plugin-builder
       '@types/lodash':
         specifier: ^4.14.192
         version: 4.14.192
       '@types/lodash-es':
         specifier: ^4.17.6
         version: 4.17.6
+      '@types/react':
+        specifier: ^18.2.22
+        version: 18.2.22
       jest:
         specifier: ^28.1.3
         version: 28.1.3(@types/node@18.15.9)(ts-node@10.9.1)
@@ -604,8 +519,102 @@ importers:
         specifier: ^1.54.0
         version: 1.62.0
 
+  packages/plugin-builder:
+    dependencies:
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^5.32.0
+        version: 5.57.1(@typescript-eslint/parser@5.57.1)(eslint@8.39.0)(typescript@4.9.5)
+      '@typescript-eslint/parser':
+        specifier: ^5.32.0
+        version: 5.57.1(eslint@8.39.0)(typescript@4.9.5)
+      '@vitejs/plugin-react':
+        specifier: ^2.0.0
+        version: 2.0.0(vite@4.3.3)
+      concurrently:
+        specifier: ^7.3.0
+        version: 7.3.0
+      eslint:
+        specifier: ^8.21.0
+        version: 8.39.0
+      eslint-plugin-react:
+        specifier: ^7.30.1
+        version: 7.32.2(eslint@8.39.0)
+      fs-extra:
+        specifier: ^10.1.0
+        version: 10.1.0
+      jest:
+        specifier: ^28.1.3
+        version: 28.1.3(@types/node@18.15.9)(ts-node@10.9.1)
+      jest-environment-jsdom:
+        specifier: ^28.1.3
+        version: 28.1.3
+      lodash:
+        specifier: ^4.17.21
+        version: 4.17.21
+      merge:
+        specifier: ^2.1.1
+        version: 2.1.1
+      prettier:
+        specifier: 2.7.1
+        version: 2.7.1
+      rimraf:
+        specifier: ^4.4.1
+        version: 4.4.1
+      rollup-plugin-visualizer:
+        specifier: ^5.8.3
+        version: 5.8.3
+      ts-jest:
+        specifier: ^28.0.7
+        version: 28.0.7(@babel/core@7.22.11)(esbuild@0.14.51)(jest@28.1.3)(typescript@4.9.5)
+      ts-node:
+        specifier: ^10.9.1
+        version: 10.9.1(@types/node@18.15.9)(typescript@4.9.5)
+      vite:
+        specifier: ^4.3.3
+        version: 4.3.3(@types/node@18.15.9)(sass@1.62.0)
+      vite-plugin-dts:
+        specifier: ^2.1.0
+        version: 2.1.0(@types/node@18.15.9)(vite@4.3.3)
+      vite-plugin-eslint:
+        specifier: ^1.7.0
+        version: 1.7.0(eslint@8.39.0)(vite@4.3.3)
+      vite-plugin-sass-dts:
+        specifier: ^1.3.2
+        version: 1.3.2(postcss@8.4.28)(prettier@2.7.1)(sass@1.62.0)(vite@4.3.3)
+      yargs-parser:
+        specifier: ^21.0.1
+        version: 21.0.1
+    devDependencies:
+      '@tsconfig/node16':
+        specifier: ^1.0.3
+        version: 1.0.3
+      '@types/fs-extra':
+        specifier: ^9.0.13
+        version: 9.0.13
+      '@types/jest':
+        specifier: ^28.1.6
+        version: 28.1.6
+      '@types/node':
+        specifier: ^18.15.9
+        version: 18.15.9
+      '@types/yargs-parser':
+        specifier: ^21.0.0
+        version: 21.0.0
+      esbuild:
+        specifier: ^0.14.51
+        version: 0.14.51
+      typescript:
+        specifier: ^4.9.5
+        version: 4.9.5
+
   packages/render:
     dependencies:
+      '@octopus/demo-page':
+        specifier: ^0.0.28
+        version: link:../demo-page
+      '@octopus/material':
+        specifier: ^0.0.28
+        version: link:../material
       '@octopus/model':
         specifier: ^0.0.28
         version: link:../model
@@ -622,15 +631,9 @@ importers:
         specifier: ^4.3.8
         version: 4.3.8(react@18.2.0)
     devDependencies:
-      '@octopus/demo-page':
-        specifier: ^0.0.28
-        version: link:../demo-page
-      '@octopus/material':
-        specifier: ^0.0.28
-        version: link:../material
       '@octopus/plugin-builder':
         specifier: ^0.0.28
-        version: link:../build-script
+        version: link:../plugin-builder
       '@types/loadjs':
         specifier: ^4.0.1
         version: 4.0.1
@@ -8018,6 +8021,14 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+
+  /@types/react@18.2.22:
+    resolution: {integrity: sha512-60fLTOLqzarLED2O3UQImc/lsNRgG0jE/a1mPW9KjMemY0LMITWEsbS4VvZ4p6rorEHd5YKxxmMKSDK505GHpA==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.3
+      csstype: 3.1.2
+    dev: true
 
   /@types/reactcss@1.2.6:
     resolution: {integrity: sha512-qaIzpCuXNWomGR1Xq8SCFTtF4v8V27Y6f+b9+bzHiv087MylI/nTCqqdChNeWS7tslgROmYB7yeiruWX7WnqNg==}

@@ -40,11 +40,7 @@ export const getCustomConfig = async () => {
   }
 
   if (fs.pathExistsSync(customConfigPath)) {
-    const customConfig = await loadConfigFromFile(
-      {} as any,
-      customConfigPath,
-      PROJECT_ROOT
-    );
+    const customConfig = await loadConfigFromFile({} as any, customConfigPath, PROJECT_ROOT);
     CUSTOM_CONFIG = customConfig?.config as BuildScriptConfig;
     return customConfig?.config as BuildScriptConfig;
   }

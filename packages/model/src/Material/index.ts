@@ -1,9 +1,10 @@
-import { CMaterialStanderType, CMaterialType, CMaterialTypeDescribe, SnippetsType } from '../types/material';
+import { MaterialType } from '@octopus/material';
+import { CMaterialStanderType, MaterialTypeDescribe, SnippetsType } from '../types/material';
 import { cloneDeep, isArray } from '../util/lodash';
 import { checkComplexData } from '../util/dataCheck';
 import { getRandomStr } from '../util';
 
-const parseMaterial = (data: CMaterialType): CMaterialStanderType => {
+const parseMaterial = (data: MaterialType): CMaterialStanderType => {
   const newData = cloneDeep(data);
   const snippets = newData.snippets;
   delete (newData as any).snippets;
@@ -28,9 +29,9 @@ const parseMaterial = (data: CMaterialType): CMaterialStanderType => {
 };
 
 export class CMaterial {
-  private rawData: CMaterialType;
+  private rawData: MaterialType;
   private data: CMaterialStanderType;
-  constructor(data: CMaterialType) {
+  constructor(data: MaterialType) {
     this.rawData = data;
     this.data = parseMaterial(data);
   }
@@ -65,12 +66,12 @@ const parseMaterials = (data: any[]) => {
   });
 };
 
-export const checkMaterials = (data: CMaterialType[]) => {
+export const checkMaterials = (data: MaterialType[]) => {
   // check page children
   data?.forEach((it: any) => {
     checkComplexData({
       data: it,
-      dataStruct: CMaterialTypeDescribe,
+      dataStruct: MaterialTypeDescribe,
       throwError: false,
     });
   });
@@ -81,12 +82,12 @@ export type SnippetsCollection = {
   list: { name: string; list: SnippetsType[] }[];
 }[];
 export class CMaterials {
-  private rawData: CMaterialType[];
+  private rawData: MaterialType[];
   private data: CMaterial[];
   // 使用过的物料
   usedMaterials: CMaterial[] = [];
 
-  constructor(data: CMaterialType[]) {
+  constructor(data: MaterialType[]) {
     this.rawData = data;
     checkMaterials(data);
     this.data = parseMaterials(data);

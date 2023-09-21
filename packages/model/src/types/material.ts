@@ -18,17 +18,11 @@ import {
   dynamic,
   assign,
 } from 'superstruct';
-import {
-  ComplexSetterTypeEnum,
-  DropPosType,
-  LibMetaType,
-  LibMetaTypeDescribe,
-  SetterBasicType,
-  SetterTypeEnum,
-} from './base';
+import { ComplexSetterTypeEnum, DropPosType, LibMetaTypeDescribe, SetterBasicType, SetterTypeEnum } from './base';
 import { CNodeDataStructDescribe, CNodeDataType } from './node';
 import { CNode } from '../Page/RootNode/Node';
 import { CRootNode } from '../Page/RootNode';
+import { MaterialType } from '@octopus/material';
 
 export enum BaseDataType {
   STRING = 'string',
@@ -99,7 +93,7 @@ export const ShapeDataTypeDescribe = object({
       valueType: dynamic(() => {
         return PropsValueTypeDescribe;
       }),
-    })
+    }),
   ),
 });
 
@@ -269,7 +263,7 @@ export type CMaterialPropsType<CustomSetter extends SetterBasicType = ''> = (
 )[];
 
 export const isSpecialMaterialPropType = <CustomSetter extends SetterBasicType = ''>(
-  val: any
+  val: any,
 ): val is SpecialMaterialPropType<CustomSetter> => {
   if (val.type && [PropsUIType.GROUP, PropsUIType.SINGLE].includes(val.type)) {
     return true;
@@ -300,7 +294,7 @@ export const CMaterialEventTypeDescribe = union([
       object({
         name: string(),
         description: string(),
-      })
+      }),
     ),
     template: string(),
   }),
@@ -388,7 +382,7 @@ export type AdvanceCustom = {
   // TODO: 当前节点是否能被放置, 可以控制落点的 UI 样式？
   canDragNode?: (
     node: CNode | CRootNode,
-    params: AdvanceCustomFuncParam
+    params: AdvanceCustomFuncParam,
   ) => Promise<
     | boolean
     | {
@@ -404,7 +398,7 @@ export type AdvanceCustom = {
   /** 当前节点是否能被放置, 可以控制落点的 UI 样 */
   canDropNode?: (
     node: CNode | CRootNode,
-    params: AdvanceCustomFuncParam
+    params: AdvanceCustomFuncParam,
   ) => Promise<
     | boolean
     | void
@@ -424,7 +418,7 @@ export type AdvanceCustom = {
   /** 当第一次被拖入到画布时触发 */
   onNewAdd?: (
     node: CNode | CRootNode,
-    params: AdvanceCustomFuncParam
+    params: AdvanceCustomFuncParam,
   ) => Promise<
     | boolean
     | void
@@ -438,7 +432,7 @@ export type AdvanceCustom = {
   /** 当元素被删除时触发 */
   onDelete?: (
     node: CNode | CRootNode,
-    params: AdvanceCustomFuncParam
+    params: AdvanceCustomFuncParam,
   ) => Promise<
     | boolean
     | void
@@ -450,7 +444,7 @@ export type AdvanceCustom = {
   /** 元素被选中时触发 */
   onSelect?: (
     node: CNode | CRootNode,
-    params: AdvanceCustomFuncParam
+    params: AdvanceCustomFuncParam,
   ) =>
     | Promise<boolean | void | undefined>
     | {
@@ -458,7 +452,7 @@ export type AdvanceCustom = {
       };
   onCopy?: (
     node: CNode | CRootNode,
-    params: AdvanceCustomFuncParam
+    params: AdvanceCustomFuncParam,
   ) => Promise<
     | boolean
     | void
@@ -484,7 +478,7 @@ export type AdvanceCustom = {
       // 是否可以放置
       canDrop: boolean;
       posInfo: DropPosType;
-    }
+    },
   ) => React.ReactElement;
   ghostViewRender?: (props: CustomViewRenderProps) => React.ReactElement;
   // TODO: 编辑模式下会使用该函数包裹目标组件，可用于定制编辑模式下的特殊信息
@@ -493,7 +487,7 @@ export type AdvanceCustom = {
     options: {
       ctx: any;
       node: CNode | CRootNode;
-    }
+    },
   ) => (...args: any[]) => React.ReactElement;
   dropPlaceholder?: (props: { node: CNode | CRootNode }) => React.ReactNode;
   /** 配置右侧面板 */
@@ -513,59 +507,11 @@ export type AdvanceCustom = {
   };
 };
 
-export type CMaterialType<PropsSetter extends string = ''> = {
-  componentName: string;
-  title: string;
-  screenshot?: string;
-  icon?: string;
-  /** 组件标签用于搜索 */
-  tags?: string[];
-  /** 分 tab 面板 */
-  groupName?: string;
-  /** 分类 */
-  category?: string;
-  /** 排序 */
-  priority?: number;
-  npm?: LibMetaType;
-  snippets: SnippetsType[];
-  props: CMaterialPropsType<PropsSetter>;
-  /** 固定的props, 不被 setter 的值覆盖, 只在编辑模式下会生效 */
-  fixedProps?: Record<string, any> | ((props: Record<string, any>) => Record<string, any>);
-  /** 可以拖入组件 */
-  isContainer?: boolean | ContainerConfig;
-  /** 选择框的根选择器 */
-  rootSelector?: string;
-  /** 是否禁止编辑器的 drag 事件，被命中的 dom 不会出发 编辑器的 */
-  disableEditorDragDom?:
-    | {
-        class?: string[];
-        id?: string[];
-      }
-    | boolean;
-  /** TODO: 组件支持的可被调用的方法， todo： 没有补充验证 类型 describe */
-  actions?: {
-    title: string;
-    // 方法名
-    name: string;
-    params?: {
-      name: string;
-      description: string;
-    }[];
-    template?: string;
-  }[];
-  /** TODO: 组件可能触发的事件 */
-  events?: CMaterialEventType[];
-  /** 定制组件高级编辑行为 */
-  advanceCustom?: AdvanceCustom;
-  /** 自定义扩展配置 */
-  extra?: Record<any, any>;
-};
-
-export type CMaterialStanderType = Omit<CMaterialType, 'snippets'> & {
+export type CMaterialStanderType = Omit<MaterialType, 'snippets'> & {
   snippets: SnippetsStanderType[];
 };
 
-export const CMaterialTypeDescribe = object({
+export const MaterialTypeDescribe = object({
   componentName: string(),
   title: string(),
   screenshot: optional(string()),
@@ -593,7 +539,7 @@ export const CMaterialTypeDescribe = object({
         type: literal(PropsUIType.GROUP),
         content: array(MaterialPropDescribe),
       }),
-    ])
+    ]),
   ),
   fixedProps: optional(any()),
   // 可以拖入组件
@@ -605,7 +551,7 @@ export const CMaterialTypeDescribe = object({
         width: string(),
         height: string(),
       }),
-    ])
+    ]),
   ),
   disableEditorDragDom: optional(any()),
   // 如果是布局组件，可以考虑将拖拽控制权转移 or 实现 resize

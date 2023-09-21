@@ -1,6 +1,6 @@
-import { AdvanceDataType, CMaterialType } from '../src/types/material';
+import { AdvanceDataType, MaterialType } from '../src/types/material';
 
-export const mockMaterialData: CMaterialType[] = [
+export const mockMaterialData: MaterialType[] = [
   {
     title: '测试物料组件',
     componentName: 'Header',

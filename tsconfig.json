@@ -12,7 +12,7 @@
       "@octopus/demo-page": ["packages/demo-page/src/index.ts"],
       "@octopus/engine": ["packages/engine/src/index.tsx"],
       "@octopus/layout": ["packages/layout/src/index.tsx"],
-      "@octopus/material": ["packages/material/src/index.tsx"],
+      "@octopus/material": ["packages/material/src/index.ts"],
       "@octopus/model": ["packages/model/src/index.ts"],
       "@octopus/render": ["packages/render/src/index.ts"]
     }

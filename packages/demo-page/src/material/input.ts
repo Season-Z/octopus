@@ -1,6 +1,6 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 
-export const InputMeta: CMaterialType = {
+export const InputMeta: MaterialType = {
   title: 'Input',
   componentName: 'Input',
   npm: {

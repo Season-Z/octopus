@@ -1,6 +1,6 @@
-import { CMaterialType } from '@octopus/model';
+import { MaterialType } from '@octopus/model';
 
-export const RowMeta: CMaterialType = {
+export const RowMeta: MaterialType = {
   title: 'Row',
   componentName: 'Row',
   npm: {
