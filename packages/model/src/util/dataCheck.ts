@@ -1,5 +1,6 @@
 import { assert, Struct, StructError } from 'superstruct';
 import { isPlainObject } from './lodash';
+import { MaterialType } from '..';
 export type BaseDataCheckParameters = {
   data: any;
   message?: string;
@@ -74,7 +75,7 @@ export const checkIsObject = checkFuncWrap((data) => {
 });
 
 export const checkComplexData = (parameters: {
-  data: any;
+  data: MaterialType;
   dataStruct: Struct<any, any>;
   message?: string;
   throwError?: boolean;

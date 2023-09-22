@@ -2,10 +2,10 @@
  * @Author: zhouxishun
  * @Date: 2023-09-11 14:34:50
  * @LastEditors: zhouxishun
- * @LastEditTime: 2023-09-21 17:36:29
+ * @LastEditTime: 2023-09-22 11:13:09
  * @Description:
  */
-import { MaterialType } from '../..';
+import { MaterialType } from '@octopus/model';
 import { snippets } from './snippets';
 
 export const meta: MaterialType = {

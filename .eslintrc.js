@@ -2,7 +2,7 @@
  * @Author: zhouxishun
  * @Date: 2023-09-11 14:34:50
  * @LastEditors: zhouxishun
- * @LastEditTime: 2023-09-21 18:04:45
+ * @LastEditTime: 2023-09-22 17:51:39
  * @Description: 
  */
 /* eslint-disable no-undef */
@@ -43,6 +43,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     // eslint-disable-next-line no-dupe-keys
     'indent': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   },
 };

@@ -12,7 +12,7 @@ import { CSlot } from './RootNode/Node/slot';
 import { clearSchema, getNode, getRandomStr } from '../util';
 import { InnerComponentNameEnum } from '../types/rootNode';
 import { AssetPackage } from '../types/base';
-import { MaterialType } from '@octopus/material';
+import { MaterialType } from '..';
 
 export const checkPage = (data: any): CPageDataType => {
   checkComplexData({

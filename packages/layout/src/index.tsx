@@ -202,6 +202,7 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
 
   init() {
     this.dnd.clearSensors();
+    // TODO 优化，创建又销毁
     this.iframeContainer.destroy();
     this.iframeContainer = new IFrameContainer();
 
@@ -309,25 +310,25 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
           });
           this.registerRealTimeUpdate();
         },
-        true
-      )
+        true,
+      ),
     );
 
     this.eventExposeHandler.push(
       addEventListenerReturnCancel(subWin as any, 'resize', () => {
         this.highlightCanvasRef.current?.update();
-      })
+      }),
     );
 
     this.eventExposeHandler.push(
       addEventListenerReturnCancel(subDoc as any, 'resize', () => {
         this.highlightCanvasRef.current?.update();
-      })
+      }),
     );
     this.eventExposeHandler.push(
       addEventListenerReturnCancel(subDoc as any, 'scroll', () => {
         this.highlightCanvasRef.current?.update();
-      })
+      }),
     );
   }
 
@@ -378,8 +379,8 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
             hoverComponentInstances: [],
           });
         },
-        true
-      )
+        true,
+      ),
     );
   }
 
@@ -426,8 +427,8 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
             e.stopPropagation();
             e.preventDefault();
           },
-          true
-        )
+          true,
+        ),
       );
     });
   }
@@ -457,7 +458,7 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
       }
 
       const isContainDragStartEl = this.state.currentSelectInstance?._NODE_MODEL?.contains(
-        startInstance?._NODE_ID || ''
+        startInstance?._NODE_ID || '',
       );
       let startNode = startInstance?._NODE_MODEL;
       const targetDragNode = startNode;
@@ -502,7 +503,7 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
       }
       // TODO: 如果落点元素是拖动元素的子元素则不允许放置
       const isContainDragStartEl = this.state.currentSelectInstance?._NODE_MODEL?.contains(
-        dropInstance?._NODE_ID || ''
+        dropInstance?._NODE_ID || '',
       );
 
       if (isContainDragStartEl) {

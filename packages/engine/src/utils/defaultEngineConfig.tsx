@@ -1,5 +1,13 @@
+/*
+ * @Author: zhouxishun
+ * @Date: 2023-09-11 14:34:50
+ * @LastEditors: zhouxishun
+ * @LastEditTime: 2023-09-22 18:49:23
+ * @Description:
+ */
 import { LayoutPropsType, collectVariable, flatObject } from '@octopus/layout';
 import { getThirdLibs } from '@octopus/render';
+import * as CRender from '@octopus/render';
 
 /** 默认使用 react 18 模式渲染 */
 export const beforeInitRender: LayoutPropsType['beforeInitRender'] = async ({ iframe }) => {
@@ -10,6 +18,7 @@ export const beforeInitRender: LayoutPropsType['beforeInitRender'] = async ({ if
   (subWin as any).React = window.React;
   (subWin as any).ReactDOM = window.ReactDOM;
   (subWin as any).ReactDOMClient = (window as any).ReactDOMClient;
+  (subWin as any).CRender = CRender;
 };
 
 /** 默认使用 react 18 模式渲染 */

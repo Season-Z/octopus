@@ -1,5 +1,4 @@
-import { MaterialType } from '@octopus/material';
-import { CMaterialStanderType, MaterialTypeDescribe, SnippetsType } from '../types/material';
+import { CMaterialStanderType, MaterialType, CMaterialTypeDescribe, SnippetsType } from '../types/material';
 import { cloneDeep, isArray } from '../util/lodash';
 import { checkComplexData } from '../util/dataCheck';
 import { getRandomStr } from '../util';
@@ -68,10 +67,10 @@ const parseMaterials = (data: any[]) => {
 
 export const checkMaterials = (data: MaterialType[]) => {
   // check page children
-  data?.forEach((it: any) => {
+  data?.forEach((it: MaterialType) => {
     checkComplexData({
       data: it,
-      dataStruct: MaterialTypeDescribe,
+      dataStruct: CMaterialTypeDescribe,
       throwError: false,
     });
   });

@@ -4,11 +4,11 @@ import styles from './Engine.module.scss';
 import i18n from './i18n/index';
 import { CPlugin, PluginManager } from './core/pluginManager';
 import mitt, { Emitter } from 'mitt';
-import { AssetPackage, CNode, CPage, CPageDataType, CRootNode, EmptyPage } from '@octopus/model';
+import { AssetPackage, CNode, CPage, CPageDataType, CRootNode, EmptyPage, MaterialType } from '@octopus/model';
 import { getDefaultRender, beforeInitRender } from './utils/defaultEngineConfig';
 import { DesignerPluginInstance } from './plugins/Designer/type';
-import { MaterialType } from '@octopus/material';
 import clsx from 'clsx';
+import { DEFAULT_PLUGIN_LIST } from './plugins';
 
 export type EnginContext = {
   pluginManager: PluginManager;
@@ -16,7 +16,7 @@ export type EnginContext = {
 };
 
 export type EngineProps = {
-  plugins: CPlugin[];
+  plugins?: CPlugin[];
   schema: CPageDataType;
   material?: MaterialType[];
   components?: Record<string, any>;
@@ -70,7 +70,8 @@ export class Engine extends React.Component<EngineProps> {
 
   async componentDidMount() {
     (window as any).__C_ENGINE__ = this;
-    const plugins = this.props.plugins;
+    // 合并基础插件与用户自定义插件
+    const plugins = [...DEFAULT_PLUGIN_LIST, ...(this.props.plugins || [])];
     const pluginManager = new PluginManager({
       engine: this,
       getWorkbench: () => this.workbenchRef.current!,
@@ -87,6 +88,7 @@ export class Engine extends React.Component<EngineProps> {
       pluginInstance.ctx.config.components = this.props.components;
       return pluginInstance;
     });
+    // 加载添加自定义插件方法
     this.props.beforePluginRun?.({
       pluginManager: this.pluginManager,
     });

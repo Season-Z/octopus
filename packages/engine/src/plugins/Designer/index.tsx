@@ -1,19 +1,27 @@
+/*
+ * @Author: zhouxishun
+ * @Date: 2023-09-11 14:34:50
+ * @LastEditors: zhouxishun
+ * @LastEditTime: 2023-09-22 17:12:25
+ * @Description:
+ */
 import React from 'react';
 import { CPage, CPageDataType } from '@octopus/model';
 
 import { PLUGIN_NAME } from './config';
 import { Designer } from './components/Canvas';
 import { DesignerPluginType } from './type';
+import { CPluginCtx } from '@/core/pluginManager';
 
 export const DesignerPlugin: DesignerPluginType = (ctx) => {
   const designerRef = React.createRef<Designer>();
   return {
     name: PLUGIN_NAME,
-    async init(ctx) {
+    async init(ctx: CPluginCtx) {
       const workbench = ctx.getWorkbench();
       workbench.replaceBodyView(<Designer ref={designerRef} pluginCtx={ctx} />);
     },
-    async destroy(ctx) {
+    async destroy(ctx: CPluginCtx) {
       console.log('destroy', ctx);
     },
     export: () => {
