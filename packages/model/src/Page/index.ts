@@ -303,7 +303,7 @@ export class CPage {
         ...cloneDeep(it.value.npm || {}),
       } as ComponentMetaType;
     });
-    console.log('export', assetPackagesList, componentsMetaList);
+
     // 剔除不合法的meta
     const finalComponentsMetaList = componentsMetaList.filter((el) => {
       if (el.componentName && el.package && el.version) {
@@ -331,7 +331,6 @@ export class CPage {
 
     res.assets = unionBy(finalAssets, (el) => el.package);
     res = omit(res, ['id']) as any;
-    console.log('res', res);
     return JSON.parse(JSON.stringify(res));
   }
 

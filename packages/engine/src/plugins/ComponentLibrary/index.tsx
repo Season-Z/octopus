@@ -79,6 +79,7 @@ class ComponentLibView extends React.Component<ComponentLibViewProps, ComponentL
       }
     }
 
+    console.log('allSnippets', allSnippets);
     this.setState({
       componentsList: allSnippets,
     });

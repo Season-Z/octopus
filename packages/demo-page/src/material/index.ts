@@ -7,12 +7,10 @@ import { DivMeta } from './native';
 import { RowMeta } from './row';
 import { TableMeta } from './table';
 import { LayoutMeta } from './layout/index';
-import { AdvanceButtonMeta } from './advanceCustomButton';
 
 export const Material: MaterialType<any>[] = [
   TableMeta,
   ModalMeta,
   ButtonMeta,
   LayoutMeta,
-  AdvanceButtonMeta,
 ];

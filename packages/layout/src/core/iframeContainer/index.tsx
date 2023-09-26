@@ -26,7 +26,7 @@ export class IFrameContainer {
   getHTMLTemplate() {
     const template = `
     <!doctype html>
-    <html class="chameleon-design-mode">
+    <html class="canvas-iframe">
       <head>
         <meta charset="utf-8"/>
         <style>

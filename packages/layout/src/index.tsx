@@ -206,7 +206,7 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
     this.iframeContainer.destroy();
     this.iframeContainer = new IFrameContainer();
 
-    (window as any).___CHAMELEON_DESIGNER_RENDER___ = this.designRenderRef;
+    (window as any).___OCTOPUS_DESIGNER_RENDER___ = this.designRenderRef;
     const iframeContainer = this.iframeContainer;
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     iframeContainer.load(document.getElementById(this.iframeDomId)!);

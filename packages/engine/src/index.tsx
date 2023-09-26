@@ -9,6 +9,7 @@ import { getDefaultRender, beforeInitRender } from './utils/defaultEngineConfig'
 import { DesignerPluginInstance } from './plugins/Designer/type';
 import clsx from 'clsx';
 import { DEFAULT_PLUGIN_LIST } from './plugins';
+import material from './material';
 
 export type EnginContext = {
   pluginManager: PluginManager;
@@ -45,7 +46,9 @@ export class Engine extends React.Component<EngineProps> {
   constructor(props: EngineProps) {
     super(props);
     this.pageSchema = props.schema;
-    this.material = props.material;
+    console.log('this.material', material);
+    // 物料整合
+    this.material = [...material, ...(props.material || [])] as MaterialType[];
     this.currentSelectNode = null;
     (window as any).__CHAMELEON_ENG__ = this;
 

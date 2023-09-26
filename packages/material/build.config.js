@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+import path from 'path';
 // 开发模式默认读取 index.html 作为开发模式入口
 // entry 作为打包库入口
 module.exports = {
@@ -11,5 +11,11 @@ module.exports = {
     'react-dom': 'ReactDOM',
   },
   // 额外的 vite 配置
-  vite: {},
+  vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, 'src')
+      },
+    },
+  },
 };

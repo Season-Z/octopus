@@ -517,25 +517,27 @@ export type MaterialType<PropsSetter extends string = ''> = {
   componentName: string;
   title: string;
   screenshot?: string;
+  /** @param icon url */
   icon?: string;
-  /** 组件标签用于搜索 */
+  /** @param 组件标签用于搜索 */
   tags?: string[];
-  /** 分 tab 面板 */
+  /** @param 分 tab 面板 */
   groupName?: string;
-  /** 分类 */
+  /** @param 分类 */
   category?: string;
-  /** 排序 */
+  /** @param 排序 */
   priority?: number;
+  /** @param 资源地址 */
   npm?: LibMetaType;
   snippets: SnippetsType[];
   props: CMaterialPropsType<PropsSetter>;
-  /** 固定的props, 不被 setter 的值覆盖, 只在编辑模式下会生效 */
+  /** @param 固定的props, 不被 setter 的值覆盖, 只在编辑模式下会生效 */
   fixedProps?: Record<string, any> | ((props: Record<string, any>) => Record<string, any>);
-  /** 可以拖入组件 */
+  /** @param 可以拖入组件 */
   isContainer?: boolean | ContainerConfig;
-  /** 选择框的根选择器 */
+  /** @param 选择框的根选择器 */
   rootSelector?: string;
-  /** 是否禁止编辑器的 drag 事件，被命中的 dom 不会出发 编辑器的 */
+  /** @param 是否禁止编辑器的 drag 事件，被命中的 dom 不会出发 编辑器的 */
   disableEditorDragDom?:
     | {
         class?: string[];
@@ -555,9 +557,9 @@ export type MaterialType<PropsSetter extends string = ''> = {
   }[];
   /** TODO: 组件可能触发的事件 */
   events?: CMaterialEventType[];
-  /** 定制组件高级编辑行为 */
+  /** @param 定制组件高级编辑行为 */
   advanceCustom?: AdvanceCustom;
-  /** 自定义扩展配置 */
+  /** @param 自定义扩展配置 */
   extra?: Record<any, any>;
 };
 
