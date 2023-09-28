@@ -85,7 +85,7 @@ export type CSSValue = {
 };
 
 export type CSSType = {
-  class: string;
+  class?: string;
   value: CSSValue[];
 };
 

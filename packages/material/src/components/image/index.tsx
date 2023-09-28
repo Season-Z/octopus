@@ -2,7 +2,7 @@
  * @Author: zhouxishun
  * @Date: 2023-09-25 14:34:50
  * @LastEditors: zhouxishun
- * @LastEditTime: 2023-09-26 15:33:03
+ * @LastEditTime: 2023-09-26 17:20:09
  * @Description: 图片
  */
 import { meta } from './meta';
@@ -52,6 +52,6 @@ function _Image({ src, ...rest }: any, ref: any) {
   }
   return <>图片</>;
 }
-const Image = React.forwardRef(_Image);
+export default React.forwardRef(_Image);
 
-export const ContainerMeta = meta;
+export const ImageMeta = meta;

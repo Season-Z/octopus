@@ -2,7 +2,7 @@
  * @Author: zhouxishun
  * @Date: 2023-09-11 14:34:50
  * @LastEditors: zhouxishun
- * @LastEditTime: 2023-09-25 18:16:35
+ * @LastEditTime: 2023-09-28 14:47:30
  * @Description:
  */
 import { MaterialType } from '@octopus/model';
@@ -11,11 +11,11 @@ import {
   attributesMeta,
   heightPropsMeta,
   widthPropsMeta,
-} from '@/config/common-meta';
+} from '../../config/common-meta';
 
 export const meta: MaterialType = {
   title: '容器',
-  componentName: 'CContainer',
+  componentName: 'Container',
   isContainer: true,
   props: [
     widthPropsMeta,

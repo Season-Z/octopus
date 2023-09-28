@@ -19,7 +19,6 @@ export type EnginContext = {
 export type EngineProps = {
   plugins?: CPlugin[];
   schema: CPageDataType;
-  material?: MaterialType[];
   components?: Record<string, any>;
   assetPackagesList?: AssetPackage[];
   beforePluginRun?: (options: { pluginManager: PluginManager }) => void;
@@ -46,9 +45,8 @@ export class Engine extends React.Component<EngineProps> {
   constructor(props: EngineProps) {
     super(props);
     this.pageSchema = props.schema;
-    console.log('this.material', material);
     // 物料整合
-    this.material = [...material, ...(props.material || [])] as MaterialType[];
+    this.material = material as MaterialType[];
     this.currentSelectNode = null;
     (window as any).__CHAMELEON_ENG__ = this;
 

@@ -1,7 +1,7 @@
 import { checkPage, CPage, CPageDataType } from '@octopus/model';
 import { isPlainObject } from 'lodash-es';
 import React, { useRef } from 'react';
-import { InnerComponent } from '../commonComponent';
+import materialComponents from '../material';
 import { AdapterOptionType, AdapterType } from './adapter';
 import { RefManager } from './refManager';
 import { RenderInstance } from './type';
@@ -13,7 +13,7 @@ export type RenderPropsType = {
   render?: UseRenderReturnType;
   ref?: React.MutableRefObject<Render | null>;
   renderMode?: 'design' | 'normal';
-} & Partial<AdapterOptionType>;
+} & Partial<Omit<AdapterOptionType, 'components'>>;
 
 export class Render extends React.Component<
   RenderPropsType,
@@ -54,8 +54,8 @@ export class Render extends React.Component<
   };
 
   render() {
-    const { props } = this;
-    const { adapter, onGetComponent, onComponentDestroy, onComponentMount } = props;
+    const { adapter, onGetComponent, onComponentDestroy, onComponentMount, renderMode, processNodeConfigHook } =
+      this.props;
 
     const { pageModel } = this.state;
     // todo: 加载 page 资源
@@ -64,23 +64,19 @@ export class Render extends React.Component<
       console.warn('pageModel is null');
       return null;
     }
-    const finalComponents = {
-      ...InnerComponent,
-      ...props.components,
-    };
 
     const $$context = this.props.$$context ?? {};
     $$context.refs = this.refManager;
     const PageRoot = adapter.pageRender(pageModel, {
       libs: {},
-      components: finalComponents,
+      components: materialComponents,
       onGetRef: this.onGetRef,
       onGetComponent,
       onComponentMount,
       onComponentDestroy,
       $$context: $$context,
-      renderMode: props.renderMode,
-      processNodeConfigHook: props.processNodeConfigHook,
+      renderMode,
+      processNodeConfigHook,
     });
 
     return PageRoot;

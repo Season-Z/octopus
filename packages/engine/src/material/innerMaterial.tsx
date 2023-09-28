@@ -68,37 +68,6 @@ const htmlNativeComponentMeta = HTMl_TAGS.map((tag) => {
 
 const BaseComponentMeta: MaterialType[] = [
   {
-    title: '块',
-    componentName: 'CBlock',
-    props: [
-      widthPropsMeta,
-      heightPropsMeta,
-      {
-        name: 'children',
-        title: '文本',
-        valueType: 'string',
-        setters: ['StringSetter', 'ExpressionSetter'],
-      },
-      customAttributesMeta,
-    ],
-    groupName: '原子组件',
-    snippets: [
-      {
-        title: '块',
-        snapshotText: 'Block',
-        category: '基础组件',
-        schema: {
-          props: {},
-          style: {
-            background: 'white',
-            width: '100%',
-            height: '100px',
-          },
-        },
-      },
-    ],
-  },
-  {
     title: '容器',
     componentName: 'CContainer',
     isContainer: true,

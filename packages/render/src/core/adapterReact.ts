@@ -86,7 +86,7 @@ export class DefineReactAdapter {
       onComponentDestroy,
       renderMode,
       processNodeConfigHook,
-    }: AdapterOptionType
+    }: AdapterOptionType,
   ) {
     this.renderMode = renderMode;
     this.components = components;
@@ -100,6 +100,7 @@ export class DefineReactAdapter {
     const rootNode = pageModel.value.componentsTree;
     const component = this.getComponent(rootNode);
 
+    console.log('component', component, this.components);
     const newComp = this.convertModelToComponent(component, pageModel.value.componentsTree);
 
     const props: Record<string, any> = {};
@@ -117,7 +118,7 @@ export class DefineReactAdapter {
       $$context: parentContext,
     }: {
       $$context: ContextType;
-    }
+    },
   ) {
     const propsModel = originalProps;
     const handlePropVal: (propVal: CPropDataType) => Record<string, any> = (propVal: CPropDataType) => {
@@ -153,7 +154,7 @@ export class DefineReactAdapter {
               {
                 params,
               },
-              parentContext
+              parentContext,
             );
             return this.render(PropNodeRender, {
               $$context,
@@ -346,7 +347,7 @@ export class DefineReactAdapter {
             } else {
               return false;
             }
-          }
+          },
         );
 
         let storeNameList: string[] = [];
@@ -520,7 +521,7 @@ export class DefineReactAdapter {
           },
           {
             $$context: newContext,
-          }
+          },
         );
         const methodList = methodsObj.methods as { name: string; define: (...args: any) => void }[];
         const methodMap = methodList.reduce((res, item) => {
@@ -552,7 +553,7 @@ export class DefineReactAdapter {
               {
                 [loopDataName]: loopData,
               },
-              newContext
+              newContext,
             );
             // handle props
             const newProps: Record<string, any> = that.transformProps(newOriginalProps, {
@@ -701,7 +702,7 @@ export class DefineReactAdapter {
                 display: 'none',
               },
             },
-            renderView
+            renderView,
           );
         }
 
@@ -723,7 +724,7 @@ export class DefineReactAdapter {
     }: {
       $$context: ContextType;
       idx?: number;
-    }
+    },
   ) {
     const runtimeComponentCache = this.runtimeComponentCache;
     if (typeof node === 'string') {

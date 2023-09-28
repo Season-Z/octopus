@@ -3,7 +3,7 @@ import { CPageDataType } from '@octopus/model';
 
 export const BasePage: CPageDataType = {
   version: '1.0.0',
-  name: 'BaseDemoPage',
+  name: 'BaseDemoPage1',
   type: 'web',
   componentsMeta: [],
   componentsTree: {
@@ -26,7 +26,7 @@ export const BasePage: CPageDataType = {
           width: '100px',
           height: '100px',
         },
-        componentName: 'CContainer',
+        componentName: 'Container',
         id: 'ckakcd',
         children: [
           {
@@ -34,7 +34,7 @@ export const BasePage: CPageDataType = {
               width: '100px',
               height: '100px',
             },
-            componentName: 'CContainer',
+            componentName: 'Container',
             id: 'ef9vms',
             children: [
               {
@@ -53,7 +53,7 @@ export const BasePage: CPageDataType = {
                   },
                   $$attributes: [{}],
                 },
-                componentName: 'CContainer',
+                componentName: 'Container',
                 id: '2vi5b1',
                 children: [
                   {
@@ -69,7 +69,7 @@ export const BasePage: CPageDataType = {
                           '`translateX(-${($$context.stateManager.bannerState.state.currentPage) * 100}%) translateZ(0) `',
                       },
                     },
-                    componentName: 'CContainer',
+                    componentName: 'Container',
                     id: '69079u',
                     children: [
                       {
@@ -91,7 +91,7 @@ export const BasePage: CPageDataType = {
                             value: '`url("${$$context.loopData.item}")`',
                           },
                         },
-                        componentName: 'CBlock',
+                        componentName: 'Block',
                         id: 'v59d71',
                         configure: {
                           propsSetter: {},
@@ -102,7 +102,7 @@ export const BasePage: CPageDataType = {
                             },
                           },
                         },
-                        title: 'CBlock-1',
+                        title: 'Block-1',
                         loop: {
                           open: true,
                           data: {
@@ -214,7 +214,7 @@ export const BasePage: CPageDataType = {
                         value: '',
                       },
                     },
-                    componentName: 'CBlock',
+                    componentName: 'Block',
                     id: '9g9ohd',
                     configure: {
                       propsSetter: {
@@ -288,7 +288,7 @@ export const BasePage: CPageDataType = {
                         },
                       ],
                     },
-                    componentName: 'CBlock',
+                    componentName: 'Block',
                     configure: {
                       propsSetter: {
                         '$$attributes.0.value': {
@@ -320,7 +320,7 @@ export const BasePage: CPageDataType = {
                       width: '100px',
                       height: '100px',
                     },
-                    componentName: 'CContainer',
+                    componentName: 'Container',
                     id: 'bl87pg',
                     children: [
                       {
@@ -338,7 +338,7 @@ export const BasePage: CPageDataType = {
                             },
                           ],
                         },
-                        componentName: 'CBlock',
+                        componentName: 'Block',
                         id: 'jn98v0',
                         configure: {
                           propsSetter: {
@@ -398,7 +398,7 @@ export const BasePage: CPageDataType = {
                                 value: '',
                               },
                             },
-                            componentName: 'CBlock',
+                            componentName: 'Block',
                             configure: {
                               propsSetter: {
                                 '$$attributes.0.value': {
@@ -476,7 +476,7 @@ export const BasePage: CPageDataType = {
                       name: '',
                     },
                     condition: true,
-                    title: 'CContainer-thumbail',
+                    title: 'Container-thumbail',
                     css: {
                       class: 'c_bl87pg',
                       value: [
@@ -536,7 +536,7 @@ export const BasePage: CPageDataType = {
               propsSetter: {},
               advanceSetter: {},
             },
-            title: 'CContainer-bg',
+            title: 'Container-bg',
             css: {
               class: 'ef9vms',
               value: [
@@ -554,7 +554,7 @@ export const BasePage: CPageDataType = {
             props: {
               content: 'Hello Chamelon EG',
             },
-            componentName: 'CText',
+            componentName: 'Text',
             id: 'qpbnqn',
             configure: {
               propsSetter: {},
@@ -620,7 +620,7 @@ export const BasePage: CPageDataType = {
               width: '100px',
               height: '100px',
             },
-            componentName: 'CContainer',
+            componentName: 'Container',
             id: 'ekv045',
             children: [
               {
@@ -632,7 +632,7 @@ export const BasePage: CPageDataType = {
                   controls: true,
                   $$attributes: [],
                 },
-                componentName: 'CVideo',
+                componentName: 'Video',
                 id: 'vu26ll',
                 configure: {
                   propsSetter: {
@@ -673,7 +673,7 @@ export const BasePage: CPageDataType = {
           propsSetter: {},
           advanceSetter: {},
         },
-        title: 'bg-CContainer',
+        title: 'bg-Container',
         classNames: [
           {
             name: 'qwerty',
