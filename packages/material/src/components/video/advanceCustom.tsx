@@ -6,23 +6,22 @@
  * @Description:
  */
 import { MaterialType } from '@octopus/model';
-import React from 'react';
 
 const advanceCustom: MaterialType['advanceCustom'] = {
-  wrapComponent: (Comp) => {
-    return (props) => {
-      //  原生的控制面板会阻断页面级别的事件监听，导致拖拽失效，这里在编辑态禁用 video 的控制面板相关事件触发
-      return (
-        <Comp
-          {...props}
-          style={{
-            pointerEvents: 'none',
-            ...props.style,
-          }}
-        ></Comp>
-      );
-    };
-  },
+	wrapComponent: (Comp: any) => {
+		return (props) => {
+			//  原生的控制面板会阻断页面级别的事件监听，导致拖拽失效，这里在编辑态禁用 video 的控制面板相关事件触发
+			return (
+				<Comp
+					{...props}
+					style={{
+						pointerEvents: 'none',
+						...props.style,
+					}}
+				></Comp>
+			);
+		};
+	},
 };
 
 export default advanceCustom;

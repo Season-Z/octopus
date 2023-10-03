@@ -1,33 +1,22 @@
 {
-  "name": "@octopus/demo-page",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "version": "0.0.28",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "plugin-builder",
-    "build": "plugin-builder --build",
-    "build:w": "plugin-builder --build --watch",
-    "lint": "eslint --ext .tsx,.ts src/",
-    "prettier": "prettier --write ./src",
-    "test": "jest"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "devDependencies": {
-    "@octopus/plugin-builder": "^0.0.28",
-    "@octopus/model": "^0.0.28",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.54.0"
-  },
-  "config": {}
+	"name": "@octopus/demo-page",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"version": "0.0.28",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"start": "plugin-builder",
+		"build": "plugin-builder --build",
+		"build:w": "plugin-builder --build --watch",
+		"lint": "eslint --ext .tsx,.ts src/",
+		"prettier": "prettier --write ./src"
+	},
+	"devDependencies": {
+		"@octopus/model": "^0.0.28",
+		"@octopus/plugin-builder": "^0.0.28"
+	}
 }

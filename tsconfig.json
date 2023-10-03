@@ -1,20 +1,16 @@
 {
-  "extends": "./tsconfig.prod.json",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "noEmit": true,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "strictFunctionTypes": true,
-    "paths": {
-      "@octopus/app-builder": ["packages/app-builder/src/webpack.config.ts"],
-      "@octopus/plugin-builder": ["packages/plugin-builder/src/index.ts"],
-      "@octopus/demo-page": ["packages/demo-page/src/index.ts"],
-      "@octopus/engine": ["packages/engine/src/index.tsx"],
-      "@octopus/layout": ["packages/layout/src/index.tsx"],
-      "@octopus/material": ["packages/material/src/index.ts"],
-      "@octopus/model": ["packages/model/src/index.ts"],
-      "@octopus/render": ["packages/render/src/index.ts"],
-    }
-  }
+	"extends": "./tsconfig.prod.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@octopus/app-builder": ["packages/app-builder/src/webpack.config.ts"],
+			"@octopus/plugin-builder": ["packages/plugin-builder/src/index.ts"],
+			"@octopus/demo-page": ["packages/demo-page/src/index.ts"],
+			"@octopus/engine": ["packages/engine/src/index.tsx"],
+			"@octopus/layout": ["packages/layout/src/index.tsx"],
+			"@octopus/material": ["packages/material/src/index.ts"],
+			"@octopus/model": ["packages/model/src/index.ts"],
+			"@octopus/render": ["packages/render/src/index.ts"]
+		}
+	}
 }

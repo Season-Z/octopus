@@ -1,93 +1,59 @@
 {
-  "name": "@octopus/engine",
-  "version": "0.0.28",
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [
-    "engine",
-    "lowcode",
-    "react",
-    "web-editor",
-    "visual-editor",
-    "vite"
-  ],
-  "scripts": {
-    "start": "plugin-builder",
-    "build": "cross-env BUILD_TYPE=PKG plugin-builder --build",
-    "build:w": "cross-env BUILD_TYPE=PKG plugin-builder --build --watch",
-    "build:analyze": "cross-env BUILD_TYPE=PKG  plugin-builder --build --analyze",
-    "build:app": "export NODE_OPTIONS=--max-old-space-size=32768 && cross-env BUILD_TYPE=APP plugin-builder --build",
-    "build:app:analyze": "cross-env BUILD_TYPE=APP plugin-builder --build --analyze",
-    "copyAssets": "",
-    "lint": "eslint --ext .tsx,.ts src/",
-    "prettier": "prettier --write ./src",
-    "test": "jest",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "peerDependencies": {
-    "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
-  },
-  "dependencies": {
-    "@ant-design/icons": "^4.8.0",
-    "@octopus/layout": "^0.0.28",
-    "@octopus/model": "^0.0.28",
-    "@octopus/render": "^0.0.28",
-    "@dnd-kit/core": "^6.0.7",
-    "@dnd-kit/modifiers": "^6.0.1",
-    "@dnd-kit/sortable": "^7.0.2",
-    "@dnd-kit/utilities": "^3.2.1",
-    "@monaco-editor/react": "^4.5.1",
-    "ahooks": "^3.7.4",
-    "antd": "^5.8.5",
-    "consola": "^2.15.3",
-    "i18next": "^22.1.5",
-    "lodash-es": "^4.17.21",
-    "mitt": "^3.0.0",
-    "monaco-editor": "^0.41.0",
-    "react-color": "^2.19.3",
-    "vite-plugin-static-copy": "^0.17.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@octopus/plugin-builder": "^0.0.28",
-    "@octopus/demo-page": "^0.0.28",
-    "@storybook/addon-docs": "^7.4.0",
-    "@storybook/addon-essentials": "^7.4.0",
-    "@storybook/addon-interactions": "^7.4.0",
-    "@storybook/addon-links": "^7.4.0",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.4.0",
-    "@storybook/react": "^7.4.0",
-    "@storybook/react-vite": "^7.4.0",
-    "@storybook/testing-library": "^0.2.0",
-    "@types/consola": "^2.2.5",
-    "@types/lodash-es": "^4.17.6",
-    "@types/react": "^18.0.15",
-    "@types/react-color": "^3.0.6",
-    "@types/react-dom": "^18.0.6",
-    "babel-loader": "^8.3.0",
-    "cross-env": "^7.0.3",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prop-types": "^15.8.1",
-    "rc-select": "^14.4.0",
-    "re-resizable": "^6.9.9",
-    "react": "^18.2.0",
-    "react-contenteditable": "^3.3.7",
-    "react-dom": "^18.2.0",
-    "react-i18next": "^12.1.1",
-    "react-router-dom": "^6.7.0",
-    "rollup-plugin-visualizer": "^5.8.3",
-    "sass": "^1.54.0",
-    "storybook": "^7.4.0"
-  },
-  "config": {}
+	"name": "@octopus/engine",
+	"version": "1.0.0",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [
+		"engine",
+		"lowcode",
+		"react",
+		"visual-editor",
+		"vite"
+	],
+	"scripts": {
+		"start": "plugin-builder",
+		"build": "cross-env BUILD_TYPE=PKG plugin-builder --build",
+		"build:w": "cross-env BUILD_TYPE=PKG plugin-builder --build --watch",
+		"build:analyze": "cross-env BUILD_TYPE=PKG  plugin-builder --build --analyze",
+		"build:app": "export NODE_OPTIONS=--max-old-space-size=32768 && cross-env BUILD_TYPE=APP plugin-builder --build",
+		"build:app:analyze": "cross-env BUILD_TYPE=APP plugin-builder --build --analyze",
+		"lint": "eslint --ext .tsx,.ts src/",
+		"prettier": "prettier --write ./src"
+	},
+	"dependencies": {
+		"@ant-design/icons": "^4.8.0",
+		"@dnd-kit/core": "^6.0.7",
+		"@dnd-kit/modifiers": "^6.0.1",
+		"@dnd-kit/sortable": "^7.0.2",
+		"@dnd-kit/utilities": "^3.2.1",
+		"@monaco-editor/react": "^4.5.1",
+		"@octopus/layout": "^0.0.28",
+		"@octopus/model": "^0.0.28",
+		"@octopus/render": "^0.0.28",
+		"antd": "^5.8.5",
+		"consola": "^2.15.3",
+		"i18next": "^22.1.5",
+		"lodash-es": "^4.17.21",
+		"mitt": "^3.0.0",
+		"react-color": "^2.19.3"
+	},
+	"devDependencies": {
+		"@octopus/demo-page": "^0.0.28",
+		"@octopus/plugin-builder": "^0.0.28",
+		"@types/consola": "^2.2.5",
+		"@types/lodash-es": "^4.17.6",
+		"@types/react-color": "^3.0.6",
+		"cross-env": "^7.0.3",
+		"rc-select": "^14.4.0",
+		"re-resizable": "^6.9.9",
+		"react-i18next": "^12.1.1",
+		"rollup-plugin-visualizer": "^5.8.3"
+	}
 }

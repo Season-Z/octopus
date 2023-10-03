@@ -6,7 +6,6 @@
  * @Description:
  */
 import { MaterialType } from '@octopus/model';
-import React from 'react';
 
 const advanceCustom: MaterialType['advanceCustom'] = {};
 
