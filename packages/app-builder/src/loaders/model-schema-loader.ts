@@ -7,7 +7,7 @@
 import { BUILD_DIST_DIR } from '../constants';
 import { Logger } from '../utils/logger';
 import { compileModel } from '../plugins/model-build-plugin';
-import { ModelProtocolV3 } from '../../types/build-data';
+import { ModelProtocolV3 } from '../types/build-data';
 
 export default function (content: string) {
   // @ts-ignore

@@ -1,10 +1,11 @@
-const webpackConfig = require('./webpack.config');
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const smp = new SpeedMeasurePlugin();
+// import webpackConfig from './webpack.config'
+// import SpeedMeasurePlugin from 'speed-measure-webpack-plugin';
 
-module.exports = () => {
-  return new Promise(async (resolve) => {
-    const config = await webpackConfig();
-    resolve(smp.wrap(config));
-  });
+// import smp = new SpeedMeasurePlugin();
+
+export default () => {
+  // return new Promise(async (resolve) => {
+  //   const config = await webpackConfig();
+  //   resolve(smp.wrap(config));
+  // });
 };

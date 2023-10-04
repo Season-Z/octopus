@@ -15,7 +15,7 @@ import webDependency from '../assets/dependency.web.json';
 import h5Dependency from '../assets/dependency.h5.json';
 import { Logger } from '../utils/logger';
 import { readBuilderConfig } from '../utils/localConfig';
-import { CProjectType } from '@octopus/model';
+import { CProjectType } from '../types/schema';
 
 export default async (projectSchema: CProjectType) => {
   if (!projectSchema) {

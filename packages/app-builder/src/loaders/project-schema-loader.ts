@@ -11,9 +11,9 @@ import {
   writeFileSync,
 } from 'fs-extra';
 import * as path from 'node:path';
-import { CProjectType } from '@octopus/model';
 import { Logger } from '../utils/logger';
 import { CACHE_DIR } from '../constants';
+import { CProjectType } from '../types/schema';
 
 export const ProjectSchemaLoader = (sourceFile: string): CProjectType => {
   Logger.info('[project-schema-loader]: Analyzing...');

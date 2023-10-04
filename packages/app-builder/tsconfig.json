@@ -1,5 +1,4 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
     "module": "CommonJS",
     "target": "es2020",
@@ -18,5 +17,6 @@
     "noUnusedLocals": true,
     "useUnknownInCatchVariables": false
   },
-  "include": ["./src", "./types"],
+  "include": ["./src", "src/types"],
+  "exclude": ["./src/templates"]
 }

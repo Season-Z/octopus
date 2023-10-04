@@ -3,15 +3,15 @@
  * 1. 从组件树中计算依赖的组件
  * 2. 结合工程assets的组件bundle清单，筛选出使用的组件bundle
  */
-// @ts-ignore
 // import { DependencyGraph } from '@sm/max-components-loader';
-import { AssetItem } from '../../types/build-data';
+import { AssetItem } from '../types/build-data';
+// @ts-ignore
+import { CProjectType } from '../types/schema';
 // import { formatPageCompositeComponentSchema } from '../plugins/component-build-plugin';
-import { CPageDataType, CProjectType } from '@octopus/model';
 
 export const analyzePageDependencies = (
   projectSchema: CProjectType,
-  pageSchema: CPageDataType,
+  pageSchema: any,
   assets: AssetItem[] = [],
 ) => {
   // // 工程内复合组件
@@ -25,15 +25,13 @@ export const analyzePageDependencies = (
   //     { compositeComponents } as any,
   //   ).sourceUrls || [];
 
-  const getComponentsName = (tree: CPageDataType['componentsTree']) => {
+  const getComponentsName = (tree: any) => {
     const nameArr: string[] = [];
     nameArr.push(tree.componentName);
 
     if (tree.children && Array.isArray(tree.children)) {
       for (const iterator of tree.children) {
-        const name = getComponentsName(
-          iterator as CPageDataType['componentsTree'],
-        );
+        const name = getComponentsName(iterator as any);
         nameArr.push(...name);
       }
     }

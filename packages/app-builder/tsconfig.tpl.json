@@ -18,5 +18,5 @@
     "useUnknownInCatchVariables": false,
     "jsx": "react"
   },
-  "include": ["./src/templates"]
+  "include": ["./src/templates", "./types"]
 }

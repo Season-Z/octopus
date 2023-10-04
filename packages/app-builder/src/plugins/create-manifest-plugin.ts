@@ -13,10 +13,10 @@ import {
   AndroidManifestProtocol,
   ComponentManifestProtocol,
   WebManifestProtocol,
-} from '../../types/build-data';
+} from '../types/build-data';
 import { readBuilderConfig } from '../utils/localConfig';
-import { CProjectType } from '@octopus/model';
 import { PageEntry } from '../loaders/page-schema-loader';
+import { CProjectType } from '../types/schema';
 
 // web|h5 应用工程manifest.json
 export const createWebManifest = (

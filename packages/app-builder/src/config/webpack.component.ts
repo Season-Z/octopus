@@ -8,7 +8,7 @@ import { BUILDER_DIR, BUILD_DATA_DIR } from '../constants';
 import {
   ProjectProtocolV3,
   CompositeComponentProtocolV3,
-} from '../../types/build-data';
+} from '../types/build-data';
 import { formatCompositeComponentSchemaV3 } from '../plugins/component-build-plugin';
 import { createComponentManifest } from '../plugins/create-manifest-plugin';
 import { Logger } from '../utils/logger';

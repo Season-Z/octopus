@@ -1,4 +1,13 @@
+/*
+ * @Author: zhouxishun
+ * @Date: 2023-09-14 11:03:31
+ * @LastEditors: zhouxishun
+ * @LastEditTime: 2023-10-04 22:28:37
+ * @Description:
+ */
+// @ts-ignore
 import React from '@sm/react';
+// @ts-ignore
 import * as ReactDom from '@sm/react-dom/client';
 // @ts-ignore
 // import { ComponentsManager } from '@sm/max-components-loader';
@@ -6,8 +15,10 @@ import * as ReactDom from '@sm/react-dom/client';
 // import { App } from '@builder/templates/web/components/App';
 // @ts-ignore
 import { Router } from '@builder/templates/web/components/Router';
-import { Render, ReactAdapter } from "../../../render/dist/index.umd.js";
+// @ts-ignore
+import { Render, ReactAdapter } from '../../../render/dist/index.umd.js';
 
+// @ts-ignore
 const jsonConver2Query = (json: Record<string, any>) =>
   Object.keys(json)
     .map(function (key) {
@@ -32,12 +43,12 @@ let components;
 
 // zx: 覆写dsl路由，为了支持MPA下的路由堆栈
 Router.init();
-const GlobalDataKey = '__GlobalDataKey';
-const globalData = sessionStorage.getItem(GlobalDataKey);
+// const GlobalDataKey = '__GlobalDataKey';
+// const globalData = sessionStorage.getItem(GlobalDataKey);
 
 // 利用react的环境，挂载dom树
 const root = ReactDom.createRoot(document.getElementById('root') as Element);
 
 root.render(
-  <Render page={pageSchema} components={components} adapter={ReactAdapter} />
+  <Render page={pageSchema} components={components} adapter={ReactAdapter} />,
 );

@@ -5,11 +5,7 @@
  */
 import { writeFileSync, ensureFileSync } from 'fs-extra';
 import * as path from 'node:path';
-import {
-  ProjectProtocolV3,
-  ModelProtocolV3,
-  Model,
-} from '../../types/build-data';
+import { ProjectProtocolV3, ModelProtocolV3, Model } from '../types/build-data';
 
 export const compileModel = async (
   projectSchema: ProjectProtocolV3,

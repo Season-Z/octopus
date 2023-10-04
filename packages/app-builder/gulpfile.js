@@ -4,24 +4,22 @@ const fs = require('fs-extra');
 // const axios = require('axios');
 const { execSync } = require('child_process');
 const gulp = require('gulp');
-const esbuild = require('gulp-esbuild');
+// const esbuild = require('gulp-esbuild');
 const zip = require('gulp-zip');
 const through2 = require('through2');
 const rimraf = require('rimraf');
+const ts = require('gulp-typescript');
 const bs = require('browser-sync').create('bundle server');
 
-const myEsbuild = esbuild.createGulpEsbuild({ incremental: true });
+// const myEsbuild = esbuild.createGulpEsbuild();
+const tsBuilder = ts.createProject('tsconfig.json');
+const tsTplBuilder = ts.createProject('tsconfig.tpl.json');
 
 // 编译
 gulp.task('tsc', () =>
   gulp
     .src(['src/*.{ts,tsx}', 'src/!(assets|templates)/**/*.{ts,tsx}'])
-    .pipe(
-      myEsbuild({
-        tsconfig: 'tsconfig.json',
-        format: 'cjs',
-      }),
-    )
+    .pipe(tsBuilder())
     .pipe(gulp.dest('dist')),
 );
 
@@ -40,11 +38,7 @@ gulp.task(
 gulp.task('tsc-tpl', () =>
   gulp
     .src('src/templates/**/*.{ts,tsx}')
-    .pipe(
-      myEsbuild({
-        tsconfig: 'tsconfig.tpl.json',
-      }),
-    )
+    .pipe(tsTplBuilder())
     .pipe(gulp.dest('dist/templates')),
 );
 
@@ -52,7 +46,7 @@ gulp.task('tsc-tpl', () =>
 gulp.task(
   'watch-tsc-tpl',
   gulp.series(gulp.task('tsc-tpl'), () =>
-    gulp.watch('src/templates/**/*.{ts,tsx}', gulp.task('tsc-tpl')),
+    gulp.watch('src/templates/**/**/*.{ts,tsx}', gulp.task('tsc-tpl')),
   ),
 );
 
@@ -83,6 +77,31 @@ gulp.task('commit_id', (cb) => {
   cb();
 });
 
+// // 下载构建依赖，由于部分umd脚本在cdn上，构建时拉取性能较差，这里直接基座打包时拉取作为本地依赖注入
+// gulp.task('download_dependency', async (cb) => {
+//   const dependencies = [].concat(androidDependency);
+
+//   // 获取资源文件内容
+//   const download = async (dependency) => {
+//     const { url, name } = dependency;
+//     if (!url.startsWith('https://') && !url.startsWith('http://')) {
+//       throw Error('dependency.android.json格式错误, url必须为http(s)地址！');
+//     }
+//     const data = await axios.get(url).then((res) => res.data);
+//     fs.ensureDirSync(path.resolve(process.cwd(), 'dist/assets', name));
+//     fs.writeFileSync(
+//       path.resolve(process.cwd(), 'dist/assets', name, 'index.js'),
+//       data,
+//     );
+//   };
+
+//   Promise.all(dependencies.map((dependency) => download(dependency))).then(
+//     () => {
+//       cb();
+//     },
+//   );
+// });
+
 // 开发
 gulp.task(
   'dev',
@@ -93,10 +112,7 @@ gulp.task(
 );
 
 // 构建
-gulp.task(
-  'build',
-  gulp.series('tsc', 'tsc-tpl', 'copy', 'commit_id'),
-);
+gulp.task('build', gulp.series('tsc', 'tsc-tpl', 'copy', 'commit_id'));
 
 // 构建基座打包zip
 gulp.task(

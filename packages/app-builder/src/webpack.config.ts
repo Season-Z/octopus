@@ -6,8 +6,6 @@ import { Logger } from './utils/logger';
 import { VERSION, COMMIT_ID } from './constants';
 // import { ProjectProtocolV3 } from '../types/build-data';
 // import * as pkg from '../package.json';
-// 配置
-// import androidConfig from './config/webpack.android';
 import webConfig from './config/webpack.web';
 // import componentConfig from './config/webpack.component';
 // import modelConfig from './config/webpack.model';
@@ -90,21 +88,21 @@ export default () => {
     let config = {};
 
     // 应用工程
-      switch (buildType) {
-        case 'wechat':
-          // config =
-          //   (await androidConfig(projectSchema as ProjectProtocolV3)) || {};
-          break;
-        case 'web':
-        case 'h5':
-          config = (await webConfig(projectSchema)) || {};
-          break;
-        default:
-          Logger.error(
-            `[ webpack.config ]: Invalid build subType "${buildType}". Support subTypes: ["web","h5","wechat"].`,
-          );
-          throw Error();
-      }
+    switch (buildType) {
+      case 'wechat':
+        // config =
+        //   (await androidConfig(projectSchema as ProjectProtocolV3)) || {};
+        break;
+      case 'web':
+      case 'h5':
+        config = (await webConfig(projectSchema)) || {};
+        break;
+      default:
+        Logger.error(
+          `[ webpack.config ]: Invalid build subType "${buildType}". Support subTypes: ["web","h5","wechat"].`,
+        );
+        throw Error();
+    }
 
     resolve(config);
   });

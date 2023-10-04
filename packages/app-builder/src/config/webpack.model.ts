@@ -3,7 +3,7 @@
  */
 import * as path from 'node:path';
 import { BUILDER_DIR, BUILD_DATA_DIR } from '../constants';
-import { ProjectProtocolV3 } from '../../types/build-data';
+import { ProjectProtocolV3 } from '../types/build-data';
 
 export default async (projectSchema: ProjectProtocolV3) => {
   // 模型数据

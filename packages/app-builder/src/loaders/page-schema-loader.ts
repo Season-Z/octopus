@@ -13,7 +13,7 @@ import { Logger } from '../utils/logger';
 // import { logic2fn } from '../plugins/logic2fn-plugin';
 // import { compilePageCompositComponents } from '../plugins/component-build-plugin';
 import { analyzePageDependencies } from '../plugins/dependency-plugin';
-import { CPageDataType, CProjectType } from '@octopus/model';
+import { CProjectType } from '../types/schema';
 
 const webPageEntry = readFileSync(
   path.resolve(BUILDER_DIR, 'templates/web/framework.js'),
@@ -43,27 +43,18 @@ export const PageSchemaLoader = async (
   // 页面前置处理
   const preparePage = async (pageSchemaFile: string) => {
     const pageSchemaJson = readFileSync(pageSchemaFile, { encoding: 'utf-8' });
-    const pageSchema: CPageDataType = JSON.parse(pageSchemaJson);
+    const pageSchema = JSON.parse(pageSchemaJson);
     const { name, code } = pageSchema;
 
     // 0. 组装下游消费的最终页面schema：
     // - 组件version和组件树source现在是拆开维护的数据
     // - 组件props里serviceCall相关的api注入
     const { assets } = projectSchema;
-    // const finalPageSchema = structBuildSchema(assets as any, pageSchema);
-    // structUseComponentCustomService(
-    //   finalPageSchema.body.components,
-    //   api?.cloud || [],
-    // );
 
     // 1. 入口文件地址 .max/${route}/index.js
     const entry = path.resolve(CACHE_DIR, name, 'index.js');
     // 组件依赖分析
-    const deps = analyzePageDependencies(
-      projectSchema,
-      pageSchema,
-      assets,
-    );
+    const deps = analyzePageDependencies(projectSchema, pageSchema, assets);
 
     entryMap.push({
       pageCode: code,
@@ -71,6 +62,8 @@ export const PageSchemaLoader = async (
       entry,
       deps,
     });
+
+    console.log('entryMap', deps);
 
     // 2. 页面逻辑，创建文件: .max/${route}/logic.js
     // const logicOutput = path.resolve(CACHE_DIR, route, 'logic.js');
@@ -91,7 +84,7 @@ export const PageSchemaLoader = async (
 
     // 4. 页面模板，创建文件：.max/${route}/index.js
     // const tpl = (type === 'app' ? androidPageEntry : webPageEntry)
-    const tpl =  webPageEntry
+    const tpl = webPageEntry
       .replace(
         'let pageSchema;',
         `const pageSchema=${JSON.stringify(pageSchema)};\n`,

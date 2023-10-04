@@ -16,9 +16,9 @@ import {
   CompositeComponentProtocolV3,
   ProjectProtocolV3,
   CompositeComponentData,
-} from '../../types/build-data';
+} from '../types/build-data';
 import { logic2fn } from '../plugins/logic2fn-plugin';
-import { analyzePageDependencies } from '../plugins/dependency-plugin';
+// import { analyzePageDependencies } from '../plugins/dependency-plugin';
 import { Logger } from '../utils/logger';
 /**
  * 页面内复合组件构建
@@ -28,76 +28,73 @@ export const compilePageCompositComponents = async (
   pageSchema: PageProtocolV3,
   output: string,
 ) => {
-  try {
-    // 1. 组件数据格式化
-    const compositeComponents = projectSchema.compositeComponents.map(
-      (comp: any) => formatPageCompositeComponentSchema(comp),
-    ) as {
-      componentMeta: ComponentMeta;
-      componentData: CompositeComponentData;
-    }[];
-
-    // 2. 页面组件依赖
-    const pageDeps = analyzePageDependencies(
-      projectSchema,
-      {
-        ...pageSchema,
-        // TOFIX: 待移除body这层
-        components: pageSchema.body.components,
-      },
-      projectSchema.assets,
-    );
-
-    // 3. 筛选并编译页面使用的符合组件
-    const compositComponentcompiler = async (
-      compositeSchema: {
-        componentMeta: ComponentMeta;
-        componentData: CompositeComponentData;
-      },
-      compositeComponents: CompositeComponentData[],
-    ) => {
-      try {
-        const deps = {
-          meta: compositeSchema.componentMeta,
-          compositeComponents,
-          minify: true,
-          // 平台标识
-          subType: '',
-        } as any;
-        const { bundleJs } = await buildCompositeComponentFromSchema(
-          compositeSchema.componentData as any,
-          deps,
-        );
-        return bundleJs;
-      } catch (e) {
-        Logger.error(
-          '[comoponent-build-plugin]: buildCompositeComponentFromSchema fail',
-        );
-        throw e;
-      }
-    };
-    const bundleMap = await Promise.all(
-      compositeComponents
-        .filter((item: any) =>
-          pageDeps.includes(SourceUtil.toSourceUrl(item.componentData.source)),
-        )
-        .map((item: any) =>
-          compositComponentcompiler(
-            item,
-            compositeComponents.map((item) => item.componentData),
-          ),
-        ),
-    );
-
-    // 4. 写文件
-    ensureFileSync(output);
-    writeFileSync(output, `${bundleMap.join('\n')}`);
-  } catch (e) {
-    Logger.error(
-      '[comoponent-build-plugin]: Fail to compile page composite components.',
-    );
-    throw e;
-  }
+  // try {
+  //   // 1. 组件数据格式化
+  //   const compositeComponents = projectSchema.compositeComponents.map(
+  //     (comp: any) => formatPageCompositeComponentSchema(comp),
+  //   ) as {
+  //     componentMeta: ComponentMeta;
+  //     componentData: CompositeComponentData;
+  //   }[];
+  //   // 2. 页面组件依赖
+  //   const pageDeps = analyzePageDependencies(
+  //     projectSchema,
+  //     {
+  //       ...pageSchema,
+  //       // TOFIX: 待移除body这层
+  //       components: pageSchema.body.components,
+  //     },
+  //     projectSchema.assets,
+  //   );
+  //   // 3. 筛选并编译页面使用的符合组件
+  //   const compositComponentcompiler = async (
+  //     compositeSchema: {
+  //       componentMeta: ComponentMeta;
+  //       componentData: CompositeComponentData;
+  //     },
+  //     compositeComponents: CompositeComponentData[],
+  //   ) => {
+  //     try {
+  //       const deps = {
+  //         meta: compositeSchema.componentMeta,
+  //         compositeComponents,
+  //         minify: true,
+  //         // 平台标识
+  //         subType: '',
+  //       } as any;
+  //       const { bundleJs } = await buildCompositeComponentFromSchema(
+  //         compositeSchema.componentData as any,
+  //         deps,
+  //       );
+  //       return bundleJs;
+  //     } catch (e) {
+  //       Logger.error(
+  //         '[comoponent-build-plugin]: buildCompositeComponentFromSchema fail',
+  //       );
+  //       throw e;
+  //     }
+  //   };
+  //   const bundleMap = await Promise.all(
+  //     compositeComponents
+  //       .filter((item: any) =>
+  //         pageDeps.includes(SourceUtil.toSourceUrl(item.componentData.source)),
+  //       )
+  //       .map((item: any) =>
+  //         compositComponentcompiler(
+  //           item,
+  //           compositeComponents.map((item) => item.componentData),
+  //         ),
+  //       ),
+  //   );
+  //   // 4. 写文件
+  //   ensureFileSync(output);
+  //   writeFileSync(output, `${bundleMap.join('\n')}`);
+  // } catch (e) {
+  //   Logger.error(
+  //     '[comoponent-build-plugin]: Fail to compile page composite components.',
+  //   );
+  //   throw e;
+  // }
 };
 
 /**

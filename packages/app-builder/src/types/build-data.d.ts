@@ -157,7 +157,7 @@ export interface PageProtocolV3 {
     // 组件树
     components: ComponentData[];
     // 页面模板，暂未使用，历史设计
-    template: {};
+    template: Record<string, never>;
   };
   // 是否登录校验
   isCheckLogin?: boolean;
@@ -338,7 +338,7 @@ export interface PageProtocolV2 {
     // 组件树
     components: ComponentData[];
     // 页面模板，暂未使用，历史设计
-    template: {};
+    template: Record<string, never>;
   };
   // 工程内复合组件
   compositeComponents: CompositeComponentData[];
