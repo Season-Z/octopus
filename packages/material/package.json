@@ -7,7 +7,7 @@
 	"files": [
 		"dist"
 	],
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -26,5 +26,6 @@
 		"csstype": "^3.1.2",
 		"sass": "^1.54.0"
 	},
-	"config": {}
+	"config": {},
+	"gitHead": "687d29cd00ddd99629fbcdf1999dce75f39e8c8f"
 }

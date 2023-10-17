@@ -1,6 +1,6 @@
 {
 	"name": "@octopus/model",
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"files": [
 		"dist"
 	],
@@ -33,5 +33,6 @@
 		"@types/lodash-es": "^4.17.6",
 		"@types/react": "^18.2.22"
 	},
-	"config": {}
+	"config": {},
+	"gitHead": "687d29cd00ddd99629fbcdf1999dce75f39e8c8f"
 }

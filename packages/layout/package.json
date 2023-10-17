@@ -1,6 +1,6 @@
 {
 	"name": "@octopus/layout",
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -28,5 +28,6 @@
 	"devDependencies": {
 		"@octopus/plugin-builder": "^0.0.28",
 		"@types/lodash-es": "^4.17.6"
-	}
+	},
+	"gitHead": "687d29cd00ddd99629fbcdf1999dce75f39e8c8f"
 }

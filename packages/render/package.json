@@ -4,7 +4,7 @@
 	"files": [
 		"dist"
 	],
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -36,5 +36,6 @@
 		"react-router-dom": "^6.6.1",
 		"sass": "^1.54.0",
 		"vite-plugin-dts": "^2.1.0"
-	}
+	},
+	"gitHead": "687d29cd00ddd99629fbcdf1999dce75f39e8c8f"
 }

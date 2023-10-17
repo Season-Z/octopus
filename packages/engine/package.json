@@ -1,6 +1,6 @@
 {
 	"name": "@octopus/engine",
-	"version": "0.0.3",
+	"version": "0.0.1",
 	"files": [
 		"dist"
 	],
@@ -54,5 +54,6 @@
 		"re-resizable": "^6.9.9",
 		"react-i18next": "^12.1.1",
 		"rollup-plugin-visualizer": "^5.8.3"
-	}
+	},
+	"gitHead": "687d29cd00ddd99629fbcdf1999dce75f39e8c8f"
 }
