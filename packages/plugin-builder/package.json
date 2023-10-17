@@ -1,6 +1,6 @@
 {
 	"name": "@octopus/plugin-builder",
-	"version": "0.0.28",
+	"version": "0.0.1",
 	"publishConfig": {
 		"access": "public"
 	},

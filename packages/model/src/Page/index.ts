@@ -247,8 +247,6 @@ export class CPage {
 		return false;
 	}
 
-	// replaceNode(targetNode, node) {}
-
 	deleteNode(node: CNode | CRootNode) {
 		const parent = node.parent;
 		if (!parent) {

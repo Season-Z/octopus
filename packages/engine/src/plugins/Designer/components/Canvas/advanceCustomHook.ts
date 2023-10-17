@@ -18,6 +18,8 @@ export type HookParameter = {
 	eventObj: LayoutDragEvent<LayoutDragAndDropExtraDataType>;
 };
 
+export type AdvanceCustomFuncReturnType<T> = Promise<ReturnType<Required<AdvanceCustom>[T]>>;
+
 export class AdvanceCustomHook {
 	getPortalViewCtx!: AdvanceCustomHookOptions['getPortalViewCtx'];
 	ctx: CPluginCtx;
@@ -28,7 +30,7 @@ export class AdvanceCustomHook {
 		this.layoutRef = options.layoutRef;
 	}
 
-	async canDrag({ dragNode, eventObj }: HookParameter): ReturnType<Required<AdvanceCustom>['canDragNode']> {
+	async canDrag({ dragNode, eventObj }: HookParameter): AdvanceCustomFuncReturnType<['canDragNode']> {
 		const nodeAdvanceCustom = dragNode!.material?.value.advanceCustom;
 		if (nodeAdvanceCustom?.canDragNode) {
 			const res = nodeAdvanceCustom?.canDragNode(dragNode!, {
@@ -43,7 +45,7 @@ export class AdvanceCustomHook {
 		return true;
 	}
 
-	async canDrop({ dragNode, dropNode, eventObj }: HookParameter): ReturnType<Required<AdvanceCustom>['canDropNode']> {
+	async canDrop({ dragNode, dropNode, eventObj }: HookParameter): AdvanceCustomFuncReturnType<['canDropNode']> {
 		const nodeAdvanceCustom = dragNode!.material?.value.advanceCustom;
 		let res: Awaited<ReturnType<Required<AdvanceCustom>['canDropNode']>> = {} as any;
 		const commonParams = {
@@ -77,7 +79,7 @@ export class AdvanceCustomHook {
 		return true;
 	}
 
-	async onNewAdd({ dragNode, dropNode, eventObj }: HookParameter): ReturnType<Required<AdvanceCustom>['onNewAdd']> {
+	async onNewAdd({ dragNode, dropNode, eventObj }: HookParameter): AdvanceCustomFuncReturnType<['onNewAdd']> {
 		const res = await dragNode!.material?.value.advanceCustom?.onNewAdd?.(dragNode!, {
 			dropNode: dropNode,
 			context: this.ctx,

@@ -1,33 +1,32 @@
 {
-  "name": "@octopus/layout",
-  "version": "0.0.28",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "plugin-builder",
-    "build": "plugin-builder --build",
-    "build:analyze": "plugin-builder --build --analyze",
-    "build:w": "plugin-builder --build --watch",
-    "lint": "eslint --ext .tsx,.ts src/",
-    "prettier": "prettier --write ./src"
-  },
-  "dependencies": {
-    "@octopus/model": "^0.0.28",
-    "@octopus/render": "^0.0.28",
-    "lodash-es": "^4.17.21",
-    "mitt": "^3.0.0",
-    "re-resizable": "^6.9.9"
-  },
-  "devDependencies": {
-    "@octopus/demo-page": "^0.0.28",
-    "@octopus/plugin-builder": "^0.0.28",
-    "@types/lodash-es": "^4.17.6"
-  }
+	"name": "@octopus/layout",
+	"version": "0.0.1",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"start": "plugin-builder",
+		"build": "plugin-builder --build",
+		"build:analyze": "plugin-builder --build --analyze",
+		"build:w": "plugin-builder --build --watch",
+		"lint": "eslint --ext .tsx,.ts src/",
+		"prettier": "prettier --write ./src"
+	},
+	"dependencies": {
+		"@octopus/model": "^0.0.28",
+		"@octopus/render": "^0.0.28",
+		"lodash-es": "^4.17.21",
+		"mitt": "^3.0.0",
+		"re-resizable": "^6.9.9"
+	},
+	"devDependencies": {
+		"@octopus/plugin-builder": "^0.0.28",
+		"@types/lodash-es": "^4.17.6"
+	}
 }

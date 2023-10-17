@@ -1,30 +1,30 @@
 {
-  "name": "@octopus/material",
-  "private": false,
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "version": "0.0.28",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "start": "plugin-builder",
-    "build": "plugin-builder --build",
-    "build:w": "plugin-builder --build --watch",
-    "lint": "eslint --ext .tsx,.ts src/",
-    "prettier": "prettier --write ./src"
-  },
-  "dependencies": {
-    "antd": "^5.6.3"
-  },
-  "devDependencies": {
-    "@octopus/plugin-builder": "^0.0.28",
-    "csstype": "^3.1.2",
-    "sass": "^1.54.0"
-  },
-  "config": {}
+	"name": "@octopus/material",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"module": "dist/index.mjs",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"start": "plugin-builder",
+		"build": "plugin-builder --build",
+		"build:w": "plugin-builder --build --watch",
+		"lint": "eslint --ext .tsx,.ts src/",
+		"prettier": "prettier --write ./src"
+	},
+	"dependencies": {
+		"antd": "^5.6.3"
+	},
+	"devDependencies": {
+		"@octopus/plugin-builder": "^0.0.28",
+		"csstype": "^3.1.2",
+		"sass": "^1.54.0"
+	},
+	"config": {}
 }

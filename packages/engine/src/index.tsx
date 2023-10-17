@@ -44,7 +44,10 @@ export class Engine extends React.Component<EngineProps> {
 
 	constructor(props: EngineProps) {
 		super(props);
-		this.pageSchema = props.schema;
+
+		const { schema, assetPackagesList } = props;
+
+		this.pageSchema = schema;
 		// 物料整合
 		this.material = material as MaterialType[];
 		this.currentSelectNode = null;
@@ -53,7 +56,7 @@ export class Engine extends React.Component<EngineProps> {
 		try {
 			this.pageModel = new CPage(this.pageSchema, {
 				materials: this.material || [],
-				assetPackagesList: props.assetPackagesList || [],
+				assetPackagesList: assetPackagesList || [],
 			});
 		} catch (e) {
 			console.error(e);

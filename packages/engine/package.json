@@ -1,6 +1,6 @@
 {
 	"name": "@octopus/engine",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"files": [
 		"dist"
 	],
@@ -45,7 +45,6 @@
 		"react-color": "^2.19.3"
 	},
 	"devDependencies": {
-		"@octopus/demo-page": "^0.0.28",
 		"@octopus/plugin-builder": "^0.0.28",
 		"@types/consola": "^2.2.5",
 		"@types/lodash-es": "^4.17.6",
