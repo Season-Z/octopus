@@ -1,6 +1,6 @@
 {
   "name": "@octopus/app-builder",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "ide project builder",
   "author": "zhouxishun",
   "license": "ISC",
@@ -57,5 +57,5 @@
     "typescript": "^4.7.4",
     "yorkie": "^2.0.0"
   },
-  "gitHead": "687d29cd00ddd99629fbcdf1999dce75f39e8c8f"
+  "gitHead": "d5f48ace5b404dc64068aa4da431f2fc9a17b404"
 }
