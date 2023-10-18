@@ -20,14 +20,14 @@
 		"prettier": "prettier --write ./src"
 	},
 	"dependencies": {
-		"@octopus/material": "^0.0.28",
-		"@octopus/model": "^0.0.28",
+		"@octopus/material": "workspace:^",
+		"@octopus/model": "workspace:^",
+		"@octopus/plugin-builder": "workspace:^",
 		"loadjs": "4.3.0-rc1",
 		"lodash-es": "^4.17.21",
 		"zustand": "^4.3.8"
 	},
 	"devDependencies": {
-		"@octopus/plugin-builder": "^0.0.28",
 		"@types/loadjs": "^4.0.1",
 		"@types/lodash-es": "^4.17.6",
 		"@types/node": "^18.15.9",
@@ -36,6 +36,5 @@
 		"react-router-dom": "^6.6.1",
 		"sass": "^1.54.0",
 		"vite-plugin-dts": "^2.1.0"
-	},
-	"gitHead": "ed80904f763a1b7c91c40f3f2f9d1a02a807acf4"
+	}
 }

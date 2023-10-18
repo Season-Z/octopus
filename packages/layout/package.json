@@ -19,15 +19,14 @@
 		"prettier": "prettier --write ./src"
 	},
 	"dependencies": {
-		"@octopus/model": "^0.0.28",
-		"@octopus/render": "^0.0.28",
+		"@octopus/model": "workspace:^",
+		"@octopus/plugin-builder": "workspace:^",
+		"@octopus/render": "workspace:^",
 		"lodash-es": "^4.17.21",
 		"mitt": "^3.0.0",
 		"re-resizable": "^6.9.9"
 	},
 	"devDependencies": {
-		"@octopus/plugin-builder": "^0.0.28",
 		"@types/lodash-es": "^4.17.6"
-	},
-	"gitHead": "ed80904f763a1b7c91c40f3f2f9d1a02a807acf4"
+	}
 }

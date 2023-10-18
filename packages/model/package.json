@@ -23,16 +23,15 @@
 		"react-dom": ">=16.9.0"
 	},
 	"dependencies": {
+		"@octopus/plugin-builder": "workspace:^",
 		"lodash-es": "^4.17.21",
 		"mitt": "^3.0.0",
 		"superstruct": "^0.16.0"
 	},
 	"devDependencies": {
-		"@octopus/plugin-builder": "^0.0.28",
 		"@types/lodash": "^4.14.192",
 		"@types/lodash-es": "^4.17.6",
 		"@types/react": "^18.2.22"
 	},
-	"config": {},
-	"gitHead": "ed80904f763a1b7c91c40f3f2f9d1a02a807acf4"
+	"config": {}
 }

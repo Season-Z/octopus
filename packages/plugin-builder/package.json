@@ -48,6 +48,5 @@
 		"vite-plugin-eslint": "^1.7.0",
 		"vite-plugin-sass-dts": "^1.3.2",
 		"yargs-parser": "^21.0.1"
-	},
-	"gitHead": "ed80904f763a1b7c91c40f3f2f9d1a02a807acf4"
+	}
 }
