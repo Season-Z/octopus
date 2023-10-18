@@ -4,7 +4,7 @@ import styles from './Engine.module.scss';
 import i18n from './i18n/index';
 import { CPlugin, PluginManager } from './core/pluginManager';
 import mitt, { Emitter } from 'mitt';
-import { AssetPackage, CNode, CPage, CPageDataType, CRootNode, EmptyPage, MaterialType } from '@octopus/model';
+import { AssetPackage, CNode, CPage, CPageDataType, CRootNode, EmptyPage, MaterialType } from '@zxscls/model';
 import { getDefaultRender, beforeInitRender } from './utils/defaultEngineConfig';
 import { DesignerPluginInstance } from './plugins/Designer/type';
 import clsx from 'clsx';
@@ -51,7 +51,7 @@ export class Engine extends React.Component<EngineProps> {
 		// 物料整合
 		this.material = material as MaterialType[];
 		this.currentSelectNode = null;
-		(window as any).__CHAMELEON_ENG__ = this;
+		(window as any).__ZXSCLS_ENG__ = this;
 
 		try {
 			this.pageModel = new CPage(this.pageSchema, {
@@ -166,7 +166,7 @@ export class Engine extends React.Component<EngineProps> {
 }
 
 export * as plugins from './plugins';
-export * from '@octopus/layout';
+export * from '@zxscls/layout';
 
 export * from './component/CustomSchemaForm/components/Setters/type';
 export * from './utils/index';

@@ -1,5 +1,5 @@
 import { Engine } from '@/index';
-import { AssetPackage, CPage } from '@octopus/model';
+import { AssetPackage, CPage } from '@zxscls/model';
 import { i18n } from 'i18next';
 import mitt, { Emitter } from 'mitt';
 import { Workbench } from '../component/Workbench';

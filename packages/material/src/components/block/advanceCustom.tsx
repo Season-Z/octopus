@@ -5,7 +5,7 @@
  * @LastEditTime: 2023-09-28 17:45:59
  * @Description:
  */
-import { MaterialType } from '@octopus/model';
+import { MaterialType } from '@zxscls/model';
 
 const advanceCustom: MaterialType['advanceCustom'] = {
 	// onCopy: async () => {

@@ -1,4 +1,4 @@
-/// <reference types="@octopus/plugin-builder/client" />
+/// <reference types="@zxscls/plugin-builder/client" />
 
 /** 包版本号 */
 declare const __PACKAGE_VERSION__: string;

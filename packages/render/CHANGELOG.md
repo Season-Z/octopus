@@ -1,4 +1,15 @@
-# @octopus/render
+# @zxscls/render
+
+## 1.0.1
+
+### Patch Changes
+
+- ces
+
+- Updated dependencies []:
+  - @zxscls/plugin-builder@1.0.1
+  - @zxscls/material@1.0.1
+  - @zxscls/model@1.0.1
 
 ## 1.0.0
 
@@ -9,6 +20,6 @@
 ### Patch Changes
 
 - Updated dependencies
-  - @octopus/plugin-builder@1.0.0
-  - @octopus/material@1.0.0
-  - @octopus/model@1.0.0
+  - @zxscls/plugin-builder@1.0.0
+  - @zxscls/material@1.0.0
+  - @zxscls/model@1.0.0

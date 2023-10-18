@@ -1,7 +1,7 @@
 import { CPlugin, PluginInstance } from '@/core/pluginManager';
-import { DragAndDrop, Layout, LayoutPropsType } from '@octopus/layout';
-import { AdvanceCustom, AssetPackage, CPageDataType } from '@octopus/model';
-import { RenderInstance } from '@octopus/render';
+import { DragAndDrop, Layout, LayoutPropsType } from '@zxscls/layout';
+import { AdvanceCustom, AssetPackage, CPageDataType } from '@zxscls/model';
+import { RenderInstance } from '@zxscls/render';
 import { Designer } from './components/Canvas';
 
 export type DesignerExport = {

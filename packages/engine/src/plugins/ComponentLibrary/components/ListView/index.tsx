@@ -6,7 +6,7 @@
  * @Description:
  */
 import { useMemo } from 'react';
-import { SnippetsType } from '@octopus/model';
+import { SnippetsType } from '@zxscls/model';
 import { Collapse } from 'antd';
 import { DragComponentItem } from '../DragItem';
 import styles from './style.module.scss';

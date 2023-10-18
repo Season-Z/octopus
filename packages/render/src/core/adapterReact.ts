@@ -14,7 +14,7 @@ import {
 	isPropModel,
 	isSlotModel,
 	JSExpressionPropType,
-} from '@octopus/model';
+} from '@zxscls/model';
 import { AdapterOptionType, ContextType, getAdapter } from './adapter';
 import { isArray, isPlainObject } from 'lodash-es';
 import {

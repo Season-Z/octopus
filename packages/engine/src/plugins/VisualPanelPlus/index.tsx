@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { CNode, CRootNode } from '@octopus/model';
+import { CNode, CRootNode } from '@zxscls/model';
 import { CRightPanelItem, RightPanelOptions } from '../RightPanel/view';
 
 import styles from './style.module.scss';

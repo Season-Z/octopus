@@ -1,4 +1,4 @@
-import { CPage, CNode, CRootNode } from '@octopus/model';
+import { CPage, CNode, CRootNode } from '@zxscls/model';
 import { ReactInstance } from 'react';
 import { RefManager } from './refManager';
 import { RenderInstance } from './type';

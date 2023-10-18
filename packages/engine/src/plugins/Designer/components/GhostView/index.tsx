@@ -1,4 +1,4 @@
-import { CNode, CRootNode } from '@octopus/model';
+import { CNode, CRootNode } from '@zxscls/model';
 
 export const GhostView = ({ node }: { node: CNode | CRootNode }) => {
 	return (

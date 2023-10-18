@@ -1,4 +1,10 @@
-# @octopus/app-builder
+# @zxscls/app-builder
+
+## 1.0.1
+
+### Patch Changes
+
+- ces
 
 ## 1.0.0
 

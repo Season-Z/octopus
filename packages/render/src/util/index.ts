@@ -2,7 +2,7 @@ import { capitalize } from 'lodash-es';
 import { Component, createElement } from 'react';
 import { ContextType } from '@/core/adapter';
 import { StoreManager } from '@/core/storeManager';
-import { AssetPackage, ComponentMetaType, LibMetaType } from '@octopus/model';
+import { AssetPackage, ComponentMetaType, LibMetaType } from '@zxscls/model';
 
 export const isClass = function (val: any) {
 	if (!val) {

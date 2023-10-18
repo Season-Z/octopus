@@ -1,5 +1,5 @@
-import { LayoutDragAndDropExtraDataType, Sensor } from '@octopus/layout';
-import { CNode, CRootNode, DropPosType } from '@octopus/model';
+import { LayoutDragAndDropExtraDataType, Sensor } from '@zxscls/layout';
+import { CNode, CRootNode, DropPosType } from '@zxscls/model';
 import React from 'react';
 import { WithTranslation } from 'react-i18next';
 import { CPluginCtx } from '../../../../core/pluginManager';

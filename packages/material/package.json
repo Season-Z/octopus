@@ -1,5 +1,5 @@
 {
-	"name": "@octopus/material",
+	"name": "@zxscls/material",
 	"private": false,
 	"publishConfig": {
 		"access": "public"
@@ -7,7 +7,7 @@
 	"files": [
 		"dist"
 	],
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -19,8 +19,8 @@
 		"prettier": "prettier --write ./src"
 	},
 	"dependencies": {
-		"@octopus/model": "workspace:^",
-		"@octopus/plugin-builder": "workspace:^",
+		"@zxscls/model": "workspace:^",
+		"@zxscls/plugin-builder": "workspace:^",
 		"antd": "^5.6.3"
 	},
 	"devDependencies": {

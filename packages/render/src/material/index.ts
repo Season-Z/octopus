@@ -6,6 +6,6 @@
  * @Description:
  */
 
-import { materialComponents } from '@octopus/material';
+import { materialComponents } from '@zxscls/material';
 
 export default materialComponents;

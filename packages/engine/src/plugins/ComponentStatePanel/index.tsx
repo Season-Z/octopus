@@ -6,7 +6,7 @@
  * @Description:
  */
 import { useEffect, useRef } from 'react';
-import { CNode, CRootNode } from '@octopus/model';
+import { CNode, CRootNode } from '@zxscls/model';
 import { CPluginCtx } from '@/core/pluginManager';
 import { CRightPanelItem } from '../RightPanel/view';
 import { MonacoEditor, MonacoEditorInstance } from '@/component/MonacoEditor';

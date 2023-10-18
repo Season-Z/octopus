@@ -1,5 +1,5 @@
 import React from 'react';
-import { CPage, CPageDataType } from '@octopus/model';
+import { CPage, CPageDataType } from '@zxscls/model';
 
 import { PLUGIN_NAME } from './config';
 import { Designer } from './components/Canvas';

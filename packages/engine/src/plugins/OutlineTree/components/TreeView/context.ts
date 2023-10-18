@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Sensor } from '@octopus/layout';
-import { CPage } from '@octopus/model';
+import { Sensor } from '@zxscls/layout';
+import { CPage } from '@zxscls/model';
 import React from 'react';
 import { TreeNodeData } from './dataStruct';
 import { DesignerExport } from '@/plugins/Designer/type';

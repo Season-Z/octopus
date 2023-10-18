@@ -8,7 +8,7 @@
 import React, { useRef, useState } from 'react';
 import { Modal } from 'antd';
 import { MonacoEditor, MonacoEditorInstance } from '../../component/MonacoEditor';
-import { CPage } from '@octopus/model';
+import { CPage } from '@zxscls/model';
 import { waitReactUpdate } from '../../utils';
 import { EnginContext } from '../../index';
 import { DesignerPluginInstance } from '../Designer/type';

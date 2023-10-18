@@ -1,1 +1,1 @@
-/// <reference types="@octopus/plugin-builder/client" />
+/// <reference types="@zxscls/plugin-builder/client" />

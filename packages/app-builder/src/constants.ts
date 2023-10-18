@@ -1,10 +1,3 @@
-/*
- * @Author: zhouxishun
- * @Date: 2023-09-14 11:03:31
- * @LastEditors: zhouxishun
- * @LastEditTime: 2023-10-04 20:22:27
- * @Description:
- */
 import path from 'node:path';
 import fs from 'node:fs';
 
@@ -20,7 +13,7 @@ export const BUILD_DATA_DIR = path.resolve(CWD_DIR, 'build-data');
 // 构建产物目录
 export const BUILD_DIST_DIR = path.resolve(CWD_DIR, 'build');
 // 构建中间产物目录
-export const CACHE_DIR = path.resolve(CWD_DIR, '.octopus');
+export const CACHE_DIR = path.resolve(CWD_DIR, '.zxscls');
 
 let commitId = '';
 if (fs.existsSync(path.resolve(BUILDER_DIR, 'commit.txt'))) {

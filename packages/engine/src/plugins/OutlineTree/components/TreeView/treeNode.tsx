@@ -5,7 +5,7 @@ import { CTreeContext, DragState } from './context';
 import { TreeNodeData } from './dataStruct';
 import styles from './style.module.scss';
 import { LOGGER } from '../../../../utils/logger';
-import { CNode } from '@octopus/model';
+import { CNode } from '@zxscls/model';
 import { Input, InputRef } from 'antd';
 import { CPluginCtx } from '@/core/pluginManager';
 import { DesignerPluginInstance } from '@/plugins/Designer/type';

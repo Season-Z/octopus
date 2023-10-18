@@ -1,4 +1,4 @@
-import { CNode, CRootNode } from '@octopus/model';
+import { CNode, CRootNode } from '@zxscls/model';
 import { Empty, Tabs } from 'antd';
 import React from 'react';
 import { CPluginCtx } from '../../core/pluginManager';

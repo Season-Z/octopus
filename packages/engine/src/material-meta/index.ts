@@ -5,6 +5,6 @@
  * @LastEditTime: 2023-09-29 22:28:59
  * @Description:
  */
-import { materialComponentsMeta } from '@octopus/material';
+import { materialComponentsMeta } from '@zxscls/material';
 
 export default Object.values(materialComponentsMeta);

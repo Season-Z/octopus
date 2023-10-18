@@ -5,18 +5,18 @@
  * @LastEditTime: 2023-09-25 17:30:38
  * @Description:
  */
-import { SnippetsType } from '@octopus/model';
+import { SnippetsType } from '@zxscls/model';
 
 export const snippets: SnippetsType[] = [
-  {
-    title: '按钮',
-    snapshotText: 'Button',
-    category: '通用',
-    schema: {
-      props: {
-        type: 'primary',
-      },
-      children: ['按钮'],
-    },
-  },
+	{
+		title: '按钮',
+		snapshotText: 'Button',
+		category: '通用',
+		schema: {
+			props: {
+				type: 'primary',
+			},
+			children: ['按钮'],
+		},
+	},
 ];

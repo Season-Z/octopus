@@ -7,7 +7,7 @@ import {
 	CRootNode,
 	getRandomStr,
 	InnerComponentNameEnum,
-} from '@octopus/model';
+} from '@zxscls/model';
 import { isArray, isPlainObject, merge } from 'lodash-es';
 import React, { useMemo, useRef } from 'react';
 import { RenderPropsType, Render, UseRenderReturnType } from './render';

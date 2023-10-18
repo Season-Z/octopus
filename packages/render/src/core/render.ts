@@ -1,4 +1,4 @@
-import { checkPage, CPage, CPageDataType } from '@octopus/model';
+import { checkPage, CPage, CPageDataType } from '@zxscls/model';
 import { isPlainObject } from 'lodash-es';
 import React, { useRef } from 'react';
 import materialComponents from '@/material';

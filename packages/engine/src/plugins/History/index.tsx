@@ -1,5 +1,5 @@
 import { waitReactUpdate } from '@/utils';
-import { CPageDataType } from '@octopus/model';
+import { CPageDataType } from '@zxscls/model';
 import { cloneDeep } from 'lodash-es';
 import { CPluginCtx } from '../../core/pluginManager';
 import { HistoryPluginType } from './type';

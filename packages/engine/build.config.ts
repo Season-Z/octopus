@@ -18,20 +18,19 @@ if (process.env.ANALYZE) {
 }
 
 const mainConfig = {
-	libMode: process.env.BUILD_TYPE !== 'APP',
 	entry: './src/index.tsx',
 	libName: 'Engine',
 	fileName: 'index',
-	external: ['react', 'react-dom', 'monaco-editor', 'antd', '@octopus/model', '@octopus/layout'],
+	external: ['react', 'react-dom', 'monaco-editor', 'antd', '@zxscls/model', '@zxscls/layout'],
 	global: {
 		react: 'React',
 		'react-dom': 'ReactDOM',
 	},
 	vite: {
-		base: process.env.BUILD_TYPE === 'APP' ? '/chameleon/' : '',
+		base: '',
 		build: {
-			outDir: process.env.BUILD_TYPE === 'APP' ? './example' : './dist',
-			copyPublicDir: process.env.BUILD_TYPE === 'APP',
+			outDir: './dist',
+			copyPublicDir: false,
 		},
 		resolve: {
 			alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],

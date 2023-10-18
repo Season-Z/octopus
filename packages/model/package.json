@@ -1,6 +1,6 @@
 {
-	"name": "@octopus/model",
-	"version": "1.0.0",
+	"name": "@zxscls/model",
+	"version": "1.0.1",
 	"files": [
 		"dist"
 	],
@@ -23,7 +23,7 @@
 		"react-dom": ">=16.9.0"
 	},
 	"dependencies": {
-		"@octopus/plugin-builder": "workspace:^",
+		"@zxscls/plugin-builder": "workspace:^",
 		"lodash-es": "^4.17.21",
 		"mitt": "^3.0.0",
 		"superstruct": "^0.16.0"

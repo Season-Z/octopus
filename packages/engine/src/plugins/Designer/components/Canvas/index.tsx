@@ -1,6 +1,6 @@
 import React from 'react';
-import { Layout, LayoutPropsType } from '@octopus/layout';
-import { AdvanceCustom, CNode, CPage, CRootNode, InsertNodePosType } from '@octopus/model';
+import { Layout, LayoutPropsType } from '@zxscls/layout';
+import { AdvanceCustom, CNode, CPage, CRootNode, InsertNodePosType } from '@zxscls/model';
 import localize from '../../localize';
 import { PLUGIN_NAME } from '../../config';
 import { DefaultSelectToolBar, DefaultSelectToolBarProps, getDefaultToolbarItem } from '../DefaultSelectToolBar';
@@ -8,13 +8,13 @@ import { getClosestNodeList } from '../../util';
 import { GhostView } from '../GhostView';
 
 import styles from './style.module.scss';
-import '@octopus/layout/dist/style.css';
-import { AssetPackage } from '@octopus/model';
+import '@zxscls/layout/dist/style.css';
+import { AssetPackage } from '@zxscls/model';
 import { createPortal } from 'react-dom';
 import { CPluginCtx } from '@/core/pluginManager';
 import { AdvanceCustomHook } from './advanceCustomHook';
 import { DesignerPluginConfig } from '../../type';
-import { AdvanceCustomFuncParam } from '@octopus/model';
+import { AdvanceCustomFuncParam } from '@zxscls/model';
 
 export type DesignerCtx = CPluginCtx<DesignerPluginConfig>;
 export type DesignerPropsType = {

@@ -1,15 +1,16 @@
 {
 	"$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
-	"changelog": "@changesets/cli/changelog",
+	"changelog": [
+		"@changesets/changelog-github",
+		{
+			"repo": "git@github.com:Season-Z/octopus.git"
+		}
+	],
 	"fixed": [],
 	"commit": false,
-	"linked": [["@octopus/*"]],
+	"linked": [["@zxscls/*"]],
 	"access": "public",
 	"baseBranch": "master",
 	"updateInternalDependencies": "patch",
-	"ignore": [],
-	"___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
-		"onlyUpdatePeerDependentsWhenOutOfRange": true
-	},
-	"snapshot": { "useCalculatedVersion": true }
+	"ignore": []
 }

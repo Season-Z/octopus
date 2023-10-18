@@ -5,7 +5,7 @@
  * @LastEditTime: 2023-09-28 17:40:08
  * @Description:
  */
-import { MaterialType } from '@octopus/model';
+import { MaterialType } from '@zxscls/model';
 import { snippets } from './snippets';
 import { attributesMeta, heightPropsMeta, widthPropsMeta } from '@/config/common-meta';
 

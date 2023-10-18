@@ -1,10 +1,10 @@
 {
-	"name": "@octopus/render",
+	"name": "@zxscls/render",
 	"private": false,
 	"files": [
 		"dist"
 	],
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -20,9 +20,9 @@
 		"prettier": "prettier --write ./src"
 	},
 	"dependencies": {
-		"@octopus/material": "workspace:^",
-		"@octopus/model": "workspace:^",
-		"@octopus/plugin-builder": "workspace:^",
+		"@zxscls/material": "workspace:^",
+		"@zxscls/model": "workspace:^",
+		"@zxscls/plugin-builder": "workspace:^",
 		"loadjs": "4.3.0-rc1",
 		"lodash-es": "^4.17.21",
 		"zustand": "^4.3.8"

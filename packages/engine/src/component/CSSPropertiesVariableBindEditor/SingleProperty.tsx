@@ -4,7 +4,7 @@ import { AutoComplete, Button, ConfigProvider, Dropdown, Input, MenuProps, messa
 import { MinusOutlined, PlusOutlined, SwapOutlined } from '@ant-design/icons';
 import { BaseSelectRef } from 'rc-select';
 import clsx from 'clsx';
-import { CNodePropsTypeEnum, JSExpressionPropType, isExpression } from '@octopus/model';
+import { CNodePropsTypeEnum, JSExpressionPropType, isExpression } from '@zxscls/model';
 import { InputStatus } from 'antd/es/_util/statusUtils';
 import { CSSPropertyList } from './cssProperties';
 import { forwardRef, useState, useMemo, useEffect, useRef, useImperativeHandle } from 'react';

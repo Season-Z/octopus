@@ -1,5 +1,5 @@
 import { CSSVal } from '@/component/CSSEditor';
-import { CSSType, CSSValue, JSExpressionPropType, isExpression } from '@octopus/model';
+import { CSSType, CSSValue, JSExpressionPropType, isExpression } from '@zxscls/model';
 
 export type StyleArr = {
 	key: string;

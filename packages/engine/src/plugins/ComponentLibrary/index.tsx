@@ -1,6 +1,6 @@
 import React, { DOMAttributes } from 'react';
 import { AppstoreAddOutlined } from '@ant-design/icons';
-import { LayoutDragAndDropExtraDataType, Sensor, SensorEventObjType } from '@octopus/layout';
+import { LayoutDragAndDropExtraDataType, Sensor, SensorEventObjType } from '@zxscls/layout';
 import { Tabs } from 'antd';
 import { CPlugin, CPluginCtx } from '@/core/pluginManager';
 import localize from './localize';
@@ -17,9 +17,9 @@ import {
 	findContainerNode,
 	isPageModel,
 	SnippetsCollection,
-} from '@octopus/model';
+} from '@zxscls/model';
 import { capitalize } from 'lodash-es';
-import { InsertNodePosType } from '@octopus/model/src';
+import { InsertNodePosType } from '@zxscls/model/src';
 import { DesignerPluginInstance } from '../Designer/type';
 
 interface ComponentLibViewProps extends WithTranslation {

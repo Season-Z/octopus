@@ -1,7 +1,7 @@
 import { CPluginCtx } from '@/core/pluginManager';
 import { Layout, LayoutDragAndDropExtraDataType, LayoutDragEvent } from '@/index';
 import { waitReactUpdate } from '@/utils';
-import { AdvanceCustom, CNode, CRootNode } from '@octopus/model';
+import { AdvanceCustom, CNode, CRootNode } from '@zxscls/model';
 
 export interface AdvanceCustomHookOptions {
 	getPortalViewCtx: () => {
