@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useImperativeHandle, useRef, useState } 
 import styles from './style.module.scss';
 import ReactDOM from 'react-dom';
 import { animationFrame, isDOM } from '@/utils';
-import { RenderInstance } from '@octopus/render';
+import { RenderInstance } from '@zxscls/render';
 
 export type HighlightCanvasRefType = {
 	update: () => void;

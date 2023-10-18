@@ -1,6 +1,6 @@
 {
-	"name": "@octopus/layout",
-	"version": "1.0.0",
+	"name": "@zxscls/layout",
+	"version": "1.0.1",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -19,9 +19,9 @@
 		"prettier": "prettier --write ./src"
 	},
 	"dependencies": {
-		"@octopus/model": "workspace:^",
-		"@octopus/plugin-builder": "workspace:^",
-		"@octopus/render": "workspace:^",
+		"@zxscls/model": "workspace:^",
+		"@zxscls/plugin-builder": "workspace:^",
+		"@zxscls/render": "workspace:^",
 		"lodash-es": "^4.17.21",
 		"mitt": "^3.0.0",
 		"re-resizable": "^6.9.9"

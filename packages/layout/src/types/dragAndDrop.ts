@@ -7,7 +7,7 @@
  */
 import { Pointer } from '@/core/dragAndDrop/common';
 import { Sensor } from '@/core/dragAndDrop/sensor';
-import { DragAndDropEventExtraData } from '@octopus/model';
+import { DragAndDropEventExtraData } from '@zxscls/model';
 
 export type DragAndDropEventObj<T = Record<string, any>> = {
 	from: MouseEvent;

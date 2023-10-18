@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { RenderInstance } from '@octopus/render';
-import { DesignRender, DesignRenderProp } from '@octopus/render';
+import { RenderInstance } from '@zxscls/render';
+import { DesignRender, DesignRenderProp } from '@zxscls/render';
 import { IFrameContainer } from './core/iframeContainer';
 import { addEventListenerReturnCancel, animationFrame } from './utils';
 import { HighlightCanvas, HighlightCanvasCoreProps, HighlightCanvasRefType } from './components/HighlightBox';
@@ -18,7 +18,7 @@ import {
 	DropPosType,
 	InnerComponentNameEnum,
 	getRandomStr,
-} from '@octopus/model';
+} from '@zxscls/model';
 import { Pointer } from './core/dragAndDrop/common';
 import { calculateDropPosInfo } from './components/DropAnchor/util';
 // import { Resizable } from 're-resizable';
@@ -205,7 +205,7 @@ export class Layout extends React.Component<LayoutPropsType, LayoutStateType> {
 		this.iframeContainer.destroy();
 		this.iframeContainer = new IFrameContainer();
 
-		(window as any).___OCTOPUS_DESIGNER_RENDER___ = this.designRenderRef;
+		(window as any).___ZXSCLS_DESIGNER_RENDER___ = this.designRenderRef;
 		const iframeContainer = this.iframeContainer;
 		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		iframeContainer.load(document.getElementById(this.iframeDomId)!);
