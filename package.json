@@ -1,5 +1,5 @@
 {
-	"name": "chameleon",
+	"name": "octopus",
 	"private": true,
 	"workspaces": [
 		"packages/*"
@@ -9,13 +9,12 @@
 		"clear": "rm -rf ./node_modules",
 		"lint": "lerna run lint",
 		"build": "lerna run build",
-		"changeVersion": "lerna version --force-publish --conventional-commits",
-		"changeVersionPatch": "lerna version patch --force-publish --conventional-commits",
-		"changeVersionMinor": "lerna version minor --force-publish --conventional-commits",
-		"changeVersionMajor": "lerna version major --force-publish --conventional-commits",
-		"toPublish": "npm run build && lerna publish from-package --force-publish --conventional-commits",
-		"toFastPublish": "lerna publish from-package --force-publish --conventional-commits",
-		"toPublishBeta": "npm run build && lerna publish --conventional-commits --dist-tag beta",
+		"version": "lerna version --force-publish --conventional-commits",
+		"version.patch": "lerna version patch --force-publish --conventional-commits",
+		"version.minor": "lerna version minor --force-publish --conventional-commits",
+		"version.major": "lerna version major --force-publish --conventional-commits",
+		"publish.fast": "lerna publish --conventional-commits --dist-tag beta",
+		"publish.beta": "npm run build && lerna publish --conventional-commits --dist-tag beta",
 		"run-tests": "lerna run test",
 		"cz": "git-cz"
 	},
