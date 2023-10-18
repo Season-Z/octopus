@@ -1,10 +1,3 @@
-/*
- * @Author: zhouxishun
- * @Date: 2023-09-11 14:34:50
- * @LastEditors: zhouxishun
- * @LastEditTime: 2023-09-29 20:24:46
- * @Description:
- */
 import { CNode, CRootNode } from '@octopus/model';
 
 export const GhostView = ({ node }: { node: CNode | CRootNode }) => {

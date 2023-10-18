@@ -1,11 +1,3 @@
-/*
- * @Author: zhouxishun
- * @Date: 2023-09-11 14:34:50
- * @LastEditors: zhouxishun
- * @LastEditTime: 2023-10-03 23:03:34
- * @Description:
- */
-// import { viteStaticCopy } from 'vite-plugin-static-copy';
 import pkg from './package.json';
 import { visualizer } from 'rollup-plugin-visualizer';
 import path from 'path';
@@ -24,20 +16,6 @@ if (process.env.ANALYZE) {
 		}),
 	);
 }
-
-// if (process.env.BUILD_TYPE === 'APP') {
-// 	plugins.push(
-// 		viteStaticCopy({
-// 			targets: [
-// 				{
-// 					src: './node_modules/@octopus/render/dist/index.umd.js',
-// 					dest: './',
-// 					rename: 'render.umd.js',
-// 				},
-// 			],
-// 		}),
-// 	);
-// }
 
 const mainConfig = {
 	libMode: process.env.BUILD_TYPE !== 'APP',

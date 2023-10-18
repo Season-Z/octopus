@@ -1,10 +1,3 @@
-/*
- * @Author: zhouxishun
- * @Date: 2023-09-11 14:34:50
- * @LastEditors: zhouxishun
- * @LastEditTime: 2023-09-22 17:12:25
- * @Description:
- */
 import React from 'react';
 import { CPage, CPageDataType } from '@octopus/model';
 
