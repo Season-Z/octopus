@@ -1,5 +1,5 @@
 {
-	"name": "@zxscls/plugin-builder",
+	"name": "@cls/plugin-builder",
 	"version": "1.0.1",
 	"publishConfig": {
 		"access": "public"
